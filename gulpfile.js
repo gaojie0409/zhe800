@@ -16,42 +16,49 @@ const watch = require('gulp-watch'); //监听
 
 
 //压缩图片
-gulp.task('uglifyimg',()=>{
+gulp.task('uglifyimg', () => {
     return gulp.src('src/img/*.{jpg,png,gif}')
-    .pipe(imagemin())
-    .pipe(gulp.dest('dist/img'));
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/img'));
 });
 //压缩html
-gulp.task('uglifyhtml',()=>{
+gulp.task('uglifyhtml', () => {
     return gulp.src('src/*.html')
-    .pipe(html())
-    .pipe(gulp.dest('dist/'));
+        .pipe(html())
+        .pipe(gulp.dest('dist/'));
 });
 //sass编译css
-gulp.task('compilesass',()=>{
+gulp.task('compilesass', () => {
     return gulp.src('src/sass/*.scss')
-    .pipe(plugins.sourcemaps.init())
-    .pipe(plugins.sass({
-        outputStyle:'compressed'
-    }))
-    .pipe(plugins.sourcemaps.write('.'))
-    .pipe(gulp.dest('dist/css/'))
+        .pipe(plugins.sourcemaps.init())
+        .pipe(plugins.sass({
+            outputStyle: 'compressed'
+        }))
+        .pipe(plugins.sourcemaps.write('.'))
+        .pipe(gulp.dest('dist/css/'))
 });
 
 //压缩js
-gulp.task('uglifyjs',()=>{
+gulp.task('uglifyjs', () => {
     return gulp.src('src/script/*.js')
-    .pipe(babel({
-        presets:['es2015']
-    }))
-    .pipe(script())
-    .pipe(gulp.dest('dist/script'));
+        .pipe(babel({
+            presets: ['es2015']
+        }))
+        .pipe(script())
+        .pipe(gulp.dest('dist/script'));
+});
+
+//压缩css
+gulp.task('uglifycss', () => {
+    return gulp.src('src/css/*.css')
+        .pipe(css()) //执行css插件包
+        .pipe(gulp.dest('dist/css'));
 });
 
 //监听
 // gulp.task('default',()=>{
 //     watch(['src/*.html','src/sass/*.scss','src/script/*.js','src/img/*.{jpg,png,gif}'],gulp.parallel('uglifyhtml','compilesass','uglifyjs','uglifyimg'))
 // })
-gulp.task('default',()=>{
-    watch(['src/*.html','src/sass/*.scss','src/script/*.js'],gulp.parallel('uglifyhtml','compilesass','uglifyjs'))
+gulp.task('default', () => {
+    watch(['src/*.html', 'src/sass/*.scss', 'src/script/*.js','src/css/*.css'], gulp.parallel('uglifyhtml', 'compilesass', 'uglifyjs','uglifycss'))
 })

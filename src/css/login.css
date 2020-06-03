@@ -1,51 +1,57 @@
-body{
+body {
     background-color: #f5f5f5;
 }
 
 /* 顶部 */
-.top{
-    padding-top:20px;
+.top {
+    padding-top: 20px;
     width: 980px;
     margin: 0 auto;
 }
-.top>a{
+/* logo */
+.top .logo {
     float: left;
 }
-.top p{
+/* 顶部注册 */
+.top p {
     float: right;
     line-height: 57px;
 }
-.content{
+/* 主体 */
+.content {
     width: 980px;
-    height: 600px;
+    height: 550px;
     margin: 10px auto;
     background: white;
     overflow: hidden;
     position: relative;
 }
-.ct_left{
+/* 左侧大图 */
+.ct_left {
     width: 460px;
     height: 330px;
     margin: 80px;
 }
-.ct_right{
+/* 右侧登陆 */
+.ct_right {
     width: 300px;
-    height: 500px;
+    height: 450px;
     margin: 80px 0 0 80px;
-    border:1px solid #ccc;
+    border: 1px solid #ccc;
     position: absolute;
-    top:0;
+    top: 0;
     right: 80px;
 }
-.ct_right .login-notices{
+/* 账号密码/扫码登陆切换 */
+.ct_right .login-notices {
     height: 52px;
 }
-.ct_right .login-notices img{
+.ct_right .login-notices img {
     position: absolute;
     top: 0;
     right: 0;
 }
-.ct_right .login-notices p{
+.ct_right .login-notices p {
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGUAAAAUCAMAAACj3AOZAAAAV1BMVEUAAADpBj/qBkfpBj/pBj/sHVzsB03qBkDpBj/pBj/pBj/pBj/pBj/pBkHpBj/pBj/pBj/pBj/////pBj/pBkH7w9T6vM/+9/n96e/81+LvOnDvNW3qBkuHdsOeAAAAEnRSTlMA5vNJPf755+fktKWCYEQ2BwH13UNNAAAAiElEQVQ4y92V2QqEMAxF7dSZcV+6uP//dyreh4AiPt2CHmhJ04dDG0girSxwWIixCXdHcL5XOtpR3hDxChZrqNiQFndIP/ItLg5h6X4lLFzGb9HyLWaY8wbVp9JPWQBL96l5PyaSmFkXkdAtfpPwLUv1um7JtgSZYgks+n8zVCWQ6IS7yKaYyCsOvYkINOf67gAAAABJRU5ErkJggg==);
     position: absolute;
     top: 10px;
@@ -55,16 +61,17 @@ body{
     text-indent: 5px;
     color: red;
 }
-.ct_right .tbc-notices-t{
+/* 二维码登陆 */
+.ct_right .tbc-notices-t {
     font-size: 20px;
     text-indent: 20px;
 }
-.ct_right .tbc-notices-m{
+.ct_right .tbc-notices-m {
     text-align: center;
     margin: 23px 0;
     font-size: 14px;
 }
-.ct_right .tbc-notices-m i{
+.ct_right .tbc-notices-m i {
     display: inline-block;
     width: 19px;
     height: 19px;
@@ -73,36 +80,189 @@ body{
     top: 5px;
     left: -5px;
 }
-.ct_right .tbc-notices-m a{
+.ct_right .tbc-notices-m a {
     color: red;
 }
-.ct_right .tbc{
+.ct_right .tbc {
     width: 120px;
     height: 120px;
     border: 1px solid #ccc;
     padding: 10px;
     margin: 30px auto 0;
 }
-.ct_right .tbc-notices-b{
+.ct_right .tbc-notices-b {
     font-size: 14px;
     text-align: right;
     margin: 20px 20px 0 0;
 }
-.ct_right .otherways{
-
-    margin: 20px;
-}
-.ct_right .qq{
-    display: inline-block;
-    width: 98px;
-    height: 33px;
-    background:url(../img/qq.png);
+/* 折800账号密码登陆 */
+.ct_right form {
     margin-left: 20px;
 }
-.ct_right .baidu{
+.ct_right .username,
+.ct_right .password,
+.ct_right .tel {
+    position: relative;
+}
+.ct_right .username input {
+    width: 220px;
+    height: 30px;
+    margin: 20px 0;
+    text-indent: 34px;
+    /* display: none; */
+}
+.ct_right .username em {
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: url(https://z5.tuanimg.com/v1/login/img/login_user.png);
+    position: absolute;
+    top: 32px;
+    left: 14px;
+    /* display: none; */
+}
+.ct_right .password input {
+    width: 220px;
+    height: 30px;
+    text-indent: 34px;
+    /* display: none; */
+}
+.ct_right .password em {
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: url(https://z5.tuanimg.com/v1/login/img/login_user.png) 12px 0;
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    /* display: none; */
+}
+.ct_right .tel input {
+    margin: 20px 0 0 0;
+    width: 220px;
+    height: 30px;
+    text-indent: 34px;
+}
+.ct_right .tel em {
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: url(https://z5.tuanimg.com/v1/login/img/login_user.png) 12px 0;
+    position: absolute;
+    top: 32px;
+    left: 14px;
+}
+/* 手机登录 */
+.ct_right .telCode {
+    width: 230px;
+}
+.ct_right .telCode input {
+    width: 120px;
+    height: 34px;
+    border: 1px solid #ccc;
+}
+.ct_right .telCode button {
+    width: 100px;
+    height: 38px;
+    border: 1px solid #ccc;
+    float: right;
+}
+/* 滑块 */
+.ct_right .movebox {
+    width: 228px;
+    height: 30px;
+    background: #e9e7e7;
+    margin: 20px 0;
+    position: relative;
+    line-height: 30px;
+    text-indent: 50px;
+}
+.ct_right .moveblock {
+    width: 35px;
+    height: 28px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 30px;
+    text-indent: 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ccc;
+}
+.ct_right .movebox span {
+    display: block;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 9px;
+    left: 50px;
+    background: radial-gradient(white, rgba(255, 255, 255, 0.7));
+    border-radius: 5px;
+}
+/* 登陆按钮 */
+.ct_right .pwdlogin {
+    position: relative;
+    margin-top: 40px;
+}
+.ct_right .pwdlogin button {
+    width: 110px;
+    height: 40px;
+    background: rgb(192, 33, 33);
+    border: 0;
+    color: white;
+    font-size: 20px;
+}
+.ct_right .forgetpwd {
+    position: absolute;
+    bottom: 0;
+    right: 70px;
+}
+/* 其他登陆方式 */
+.ct_right .otherways {
+    margin: 20px;
+}
+.ct_right .qq {
     display: inline-block;
     width: 98px;
     height: 33px;
-    background:url(../img/baidu.png) 0 75px;
-    
+    background: url(../img/qq.png);
+    margin-left: 20px;
+}
+.ct_right .baidu {
+    display: inline-block;
+    width: 98px;
+    height: 33px;
+    background: url(../img/baidu.png) 0 75px;
+}
+
+/* 底部 */
+.footerbox {
+    width: 100%;
+    background: white;
+}
+.footer ,.footer .f-bottom{
+    width: 870px;
+    margin: 0 auto;
+}
+.footer .f-top{
+    text-align: center;
+    color: #999;
+    line-height: 30px;
+}
+.footer .f-bottom{
+    text-align: center;
+}
+.footer .f-bottom a{
+    display: inline-block;
+    width: 70px;
+    height: 26px;
+}
+.footer .f-bottom a:nth-child(1){
+    background:url(../img/shouye_new_img.png) -886px -626px;
+}
+.footer .f-bottom a:nth-child(2){
+    background:url(../img/shouye_new_img.png) -886px -660px;
+}
+.footer .f-bottom a:nth-child(3){
+    background:url(../img/shouye_new_img.png) -886px -699px;
 }
