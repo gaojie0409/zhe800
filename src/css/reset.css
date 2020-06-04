@@ -26,6 +26,10 @@ body {
 	font-size: 12px;
 	color: #434343;
 }
+em,strong,b,i{
+	font-style: normal;
+	font-weight: normal;
+}
 .clearfix:after{/*伪元素是行内元素 正常浏览器清除浮动方法*/
 	content: "";
 	display: block;
@@ -46,4 +50,5 @@ img {
 }
 a {
 	text-decoration: none;
+	color: #333;
 }

@@ -1,0 +1,709 @@
+$bdcolor: #ccc;
+$bgcolor-l: #fff;
+$bgcolor-d: #fafafa;
+$mainWidth: 1200px;
+@mixin wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+@mixin bdtype() {
+    border: 1px solid #ccc;
+}
+//模块头部
+@mixin moduletop {
+    margin-top: 30px;
+    position: relative;
+    //左侧
+    .left {
+        float: left;
+        span {
+            display: block;
+            float: left;
+            width: 130px;
+            height: 40px;
+        }
+        i {
+            display: block;
+            float: left;
+            width: 5px;
+            height: 5px;
+            border-radius: 35%;
+            background: red;
+            margin: 15px 5px 0 25px;
+        }
+        p {
+            float: left;
+            margin-top: 10px;
+        }
+    }
+    // 右侧导航
+    .right {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        li {
+            float: left;
+            margin: 0 2px;
+            padding: 8px;
+        }
+    }
+}
+//阴影效果
+@mixin shadow{
+    &:hover {
+        box-shadow: 5px 0px 10px lightgray, -5px 0px 10px lightgray;
+    }
+}
+body {
+    background: $bgcolor-l;
+}
+// 顶部悬浮导航
+.topnav {
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 1px 2px 0px lightgrey;
+    .topnav-t {
+        width: 100%;
+        height: 40px;
+        border-bottom: 2px solid red;
+        .topnav-tbox {
+            @include wrapper();
+        }
+    }
+    .topnav-b {
+        @include wrapper();
+        ul {
+            li {
+                float: left;
+                padding: 0 10px;
+                margin-top: 10px;
+                a {
+                    color: #666666;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+//悬浮导航上半部分左导航
+.topnav-t-l {
+    float: left;
+    ul {
+        li {
+            float: left;
+            padding: 0 10px;
+            margin-top: 10px;
+            a {
+                color: #666666;
+                font-size: 14px;
+            }
+        }
+    }
+}
+//悬浮导航上半部分右搜索
+.topnav-t-r {
+    float: right;
+    form {
+        font-size: 0;
+        margin-top: 5px;
+        input {
+            border: 1px solid rgb(230, 0, 68);
+            width: 120px;
+            height: 25px;
+        }
+        button {
+            margin-left: -1px;
+            border: 0;
+            width: 82px;
+            height: 29px;
+            background: url(../img/index-common.png) no-repeat -189px 0;
+            vertical-align: bottom;
+        }
+    }
+}
+// 顶部工具栏
+.top-toolbarbox {
+    width: 100%;
+    height: 30px;
+    background: $bgcolor-d;
+    .top-toolbar {
+        @include wrapper();
+        padding-top: 9px;
+        span {
+            float: right;
+            display: block;
+            padding: 0 15px;
+            color: #999999;
+            border-right: 1px solid #ccc;
+            line-height: 14px;
+        }
+    }
+}
+//顶部工具栏手机
+.top-toolbar-tel {
+    position: relative;
+    em {
+        display: inline-block;
+        width: 12px;
+        height: 16px;
+        background: url(../img/index-common.png) no-repeat;
+        vertical-align: middle;
+        margin-right: 3px;
+    }
+    div {
+        width: 130px;
+        height: 130px;
+        background: white url("https://status.tuanimg.com/statics/zhe/components/toolbar/img/big_bg_img_v3.png")
+            no-repeat 5px 5px;
+        position: absolute;
+        top: 15px;
+        left: -25px;
+        box-shadow: 0 1px 2px 2px lightgray;
+    }
+}
+//顶部工具栏购物车
+.top-toolbar-shopcar {
+    em {
+        img {
+            display: inline-block;
+            vertical-align: bottom;
+            margin-right: 3px;
+        }
+    }
+    b {
+        color: red;
+    }
+}
+// 头部
+.header {
+    width: 100%;
+    .headerbox {
+        @include wrapper();
+        .logo {
+            float: left;
+            margin-top: 20px;
+            img {
+                width: 200px;
+            }
+        }
+        .head-right {
+            float: right;
+            img {
+                width: 350px;
+                margin-top: 25px;
+            }
+        }
+    }
+}
+//头部搜索框
+.head-search {
+    border: 2px solid #e60044;
+    border-right: 0;
+    float: left;
+    margin: 27px 0 0 40px;
+    border-radius: 3px 0 0 3px;
+    width: 550px;
+    // background: blue;
+    position: relative;
+    div {
+        float: left;
+        width: 112px;
+        height: 35px;
+        background: url(//status.tuanimg.com/statics/zhe/common/img/index-common.png) -34px -34px no-repeat;
+        color: white;
+        font-size: 20px;
+        line-height: 35px;
+        text-indent: 30px;
+    }
+    form {
+        .searchcontent {
+            float: left;
+            border: 0;
+            border-right: 1px solid #ccc;
+            margin-top: 10px;
+            width: 385px;
+            outline: 0;
+        }
+        .search-btn {
+            float: left;
+            width: 48px;
+            height: 24px;
+            margin-top: 7px;
+            background-color: #fff;
+            outline: 0;
+            border: 0;
+            cursor: pointer;
+            background: url(//status.tuanimg.com/statics/zhe/common/img/index-common.png) -34px 0 no-repeat;
+        }
+        div {
+            position: absolute;
+            right: -15px;
+            top: -2px;
+            width: 15px;
+            height: 39px;
+            background: url(//status.tuanimg.com/statics/zhe/common/img/index-common.png) 0 -34px no-repeat;
+        }
+    }
+}
+//头部导航
+.head-nav {
+    width: 100%;
+    margin-top: 40px;
+}
+.head-navbox {
+    @include wrapper();
+    li {
+        box-sizing: border-box;
+        cursor: pointer;
+        float: left;
+        text-align: center;
+        height: 40px;
+        line-height: 40px;
+        a {
+            display: block;
+            color: #696969;
+            font-size: 16px;
+            width: 130px;
+            height: 40px;
+        }
+        &:first-child {
+            background: rgb(230, 0, 68);
+            a {
+                width: 150px;
+                color: white;
+            }
+        }
+        &:hover {
+            box-shadow: 5px 0 10px #ddd, -5px 0 10px #ddd;
+            border-bottom: 2px solid #ec1611;
+            a{
+                color: red;
+            }
+        }
+        &:last-child {
+            background: url(https://z3.tuanimg.com/imagev2/site/252x68.d881736ade47ab426df86e928a1a2fa1.gif) no-repeat
+                top left/140px;
+            position: relative;
+            a {
+                width: 140px;
+            }
+            img {
+                display: none;
+            }
+            &:hover {
+                box-shadow: none;
+                border-bottom: 0;
+                img {
+                    display: block;
+                    position: absolute;
+                    top: 40px;
+                    right: 0;
+                    z-index: 20;
+                }
+            }
+        }
+    }
+}
+//头部主内容
+.head-content {
+    width: 100%;
+    border-top: 1px solid #ccc;
+    .head-content-box {
+        @include wrapper();
+        @include bdtype();
+        border-top: 0;
+    }
+}
+//  头部菜单
+.head-content-menu {
+    float: left;
+    width: 150px;
+    height: 304px;
+    li {
+        box-sizing: border-box;
+        border-bottom: 1px solid #ccc;
+        padding-left: 30px;
+        margin: 0 10px;
+        line-height: 29px;
+        &:nth-child(9) {
+            padding-left: 5px;
+            font-size: 10px;
+        }
+        &:nth-child(10) {
+            padding-left: 10px;
+            font-size: 10px;
+            border-bottom: 0;
+        }
+        a {
+            display: inline-block;
+            height: 29px;
+            &:hover{
+                color: red;
+            }
+        }
+    }
+}
+//头部轮播图
+.head-content-lunbo {
+    position: relative;
+    float: left;
+    ul {
+        position: relative;
+        width: 951px;
+        height: 304px;
+        li {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    //按钮
+    ol {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translate(-50%);
+        li {
+            float: left;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: white;
+            text-indent: -999px;
+            margin-right: 10px;
+        }
+        li.active {
+            background: red;
+        }
+    }
+}
+//右侧用户信息
+.head-content-right {
+    width: 98px;
+    float: left;
+    p {
+        color: red;
+        text-align: center;
+    }
+    .check {
+        div {
+            width: 40px;
+            height: 40px;
+            background: url(//status.tuanimg.com/statics/zhe/common/img/index-common.png) no-repeat -231px -34px;
+            margin: 15px 0 10px 29px;
+        }
+    }
+    .appr {
+        div {
+            width: 40px;
+            height: 40px;
+            background: url(//status.tuanimg.com/statics/zhe/common/img/index-common.png) no-repeat -231px -82px;
+            margin: 30px 0 10px 29px;
+        }
+    }
+    .free {
+        img {
+            width: 60px;
+            height: 60px;
+            margin: 20px auto 10px;
+        }
+    }
+}
+//品牌推荐
+.brand {
+    @include wrapper();
+}
+// 品牌推荐头部
+.brand-top {
+    @include moduletop();
+    .left {
+        span {
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAAAeCAMAAADjAPfrAAAAdVBMVEUAAAD/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUbBNydBAAAAJnRSTlMAQH+/7xFg4J8wz3AfT4/qsAMI9xfaJToszsaXgVcNwGd3RrinDzb9fv0AAANMSURBVFjD7ZbZktsgEEWbXWj3vozHsyS5//+JUQukWLJrsJKXecgpF24wEqdowNC3ZyUb3NDIFX0XJGZ80Hehwett1cLRdwG4r6cxQhhSynJcaNXSiFXKx1AAanxAGv4qQzMWqe33Qz2RcBlHFRTjDMgn/cW9mnAhzHRWLlWrgOpv1HCDoiL3rCbb6VOCfHxQA2ah2moH7Fb/rCZRsFqOeqZG3OB5ApzMAEimTKqtu/Idux3eu2D9SI1GHqg5KWOhSIDny0LfrzXHaW9nxl9zRtkJOby+wnWSW5wXqimaFBLIkJHCQPSr0JoSi9S2R95kOBGdUHTh0SxU00qFghWUawGF6l6NOhHWFqJgK8ZQmmuDT6JPNFeuPbnWcgU4i6mC6Xeome/QSOXgFxwe10Px0+GNwze4nx+f5jm1wLDM8rjWpFRAJq3CxNkIhuXoabX3HZjGc8U3YFy9XqKmqOwbOZKDy0wtdCfg+cW2Bzanl3e/CtXV0dbnDWAphRjeG08DJeVEbd59udoRqGhGBRzGSikGDI2hv1WbL3cdflGTefaK66SU0kAeig5PX/CBzYEmHDaQj9Ip6FZBhJfbOzULoPJztQ5WC8oiFMkN+oJmP0lxgxdKqxVx0NBFe57KHoeuqj2PXgimmKppwEc/XSduki1225tTbod2NVVzUspBLet3oBqVJZUKgI3HRFRmVxVzpvKJWgHoOHUuuU/XZ5xo5ITzmqZqPOagJoYWOd48MsDSoGY0Ouru8zihFkDWq8kKyCnBdoPtGGPDcVqtjmqYwHu1+wibPU4od9dmXIg1JVhjsxrTu8H6KTUFmAdqLbJ4X5sn1AAwJofz4RBgyZIS7OFoxGE/V8uFEFGNJyJjtbBQAKkCOaB5w1qUUW2WUJ8DyEtTG2K8lLIwlEKEf6njkcs3fm96h5bDNWN2ny1rCmqzhJYaPa0Uf7BSJNQsL8zDD+DHgRe1fUbNAvUjNTI3aqI/sLNejZ/CHVVC7YKLUHwYAUpceLT04WGB6qEaTdT8aKCQkZ/LaUofuoC+GHPRAB+4twgpeRr5thyK2CIcPaFGmgVqTk3W57uoVaCWHZYSvAJa/uLol+wkLT2FoTTp7kk3ex3Cq63oP1/xG2Vcs+opsI+9AAAAAElFTkSuQmCC)
+                no-repeat;
+        }
+    }
+    .right {
+        li {
+            a {
+                &:hover {
+                    color: red;
+                }
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+            &.active {
+                background: red;
+                a {
+                    color: white;
+                }
+            }
+        }
+    }
+}
+//品牌推荐中间广告位
+.s-banner {
+    border-top: 2px solid red;
+    display: flex;
+    justify-content: space-between;
+    div {
+        transition: box-shadow 0.5s;
+        img {
+            width: 390px;
+            height: 200px;
+        }
+        p {
+            width: 390px;
+            height: 20px;
+            background: rgba(51, 51, 49, 0.5);
+            text-align: center;
+            color: white;
+            line-height: 20px;
+        }
+        // &:hover {
+        //     box-shadow: 5px 0px 5px lightgray, -5px 0px 5px lightgray;
+        // }
+        @include shadow();
+    }
+}
+//品牌推荐底部品牌推荐
+.brand-recommend {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    img {
+        width: 120px;
+        @include shadow();
+    }
+}
+//限时秒杀模块
+.miaosha {
+    @include wrapper();
+}
+//限时秒杀模块头部
+.miaosha-top {
+    @include moduletop();
+    .left {
+        span {
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAAAeCAMAAADjAPfrAAAAY1BMVEUAAAD/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUbEJA2wAAAAIHRSTlMAv39AH/APMGDfz59wUPmP5qavd7hXrCYGw0kW1MxmmDd/d68AAAOdSURBVFjD7ZfbtpsgEIaHo6Kiidk5dB/a//2fsmFAiLqjWb1q1+p/oSxE+JhxZpD+Eb0fDu/0d+oAHOjvVEH78fVBf6JBiGFqW1XrcJeALCOsp6JOWHpB+vRm7mhvpzDfFz4f2QSiCA9S93dUUlUGCiIlR9HgrnqNNsJJHZtKAM0+28cRWUdN157Z9tAkksQMLXe3K7Qq9odttbirqXbRjuiPZ32z1/Olh/n5iR5fM7RGJDTBMltoCiwnuoxmFbESERzfjKR9ffzSU/M6Avi8fv2YoSkNiICWeyKaE8IBos7ERgxa1m3Eta71AW2AsVTgklpNL+tHxDkBP1NPAamBLqApVjOhSb4KiSxmkvHmgSEMksCY0To3Daz3gG65BVBiM3qJ1gKakPUa2gB4HuQAFbkasCKeGbYNd7x8LNDoguMSzaCh52g6G7NRVeYMvrY8qEZ4nSIXB6kaweq2skbf64yW+6DnaJInASBZboFGpL6JUAOINEhwKvGhs/WkpKxJSwOYrexxKhYCSsSe5mgN4OmbMBBSBp6qgcpotRABgaOiS2iKryTG2mZ/h5GeNvSG8xrtjLeV1Zx9njxE3L9IS2pwwwA6oVmpH1J0GxyftPG1uey7d+B98igOczTFKzxNuZZ9l9Ha0KcroEleV0Zabq61kdt63Nbl/YZ+gWYBs0QrDuWvSE5oARTGVLarE5oAxj9Bs6+g8QUAOQQzV87Ow0AAqBLaAJbJNbSOW1EySQBuaqut88b1FYeG9ToA4d5SbdDM0bSBUxGtAgxYPqKN5iHl1j4HNdtkNwxKNWD5ZRh03nEsgCs0m0XN0EgONjqU4QHRTueK6jFJdEAdX6kMm3UneWQ9TR4Cd9UApnOIqLLVluXdQ3CfLGSoiGVbAG18pYmzbEijL/H7NOUOCDtnNJWS+NOTBxn/gNulkxtTOiaLaJr3KO3mgeiS208LleQdskM7kw5aa7QmNttiSdUUMjukTU2PeSZXbZjNFO89Le9e6WgvBwy83FjN0ORdY7RJWVuxYUxF5ZtTmmttSs1ip1Sd0Z9mZD3Oq0NRyqTRB806DASiuoLG7gPGvLaCsORnhu6gaEsdcLnmo+Qlzb9Gk3FSxa4ZuVjWxLU6O7exBc26OLqI22BNwbmXQLxBf/T6dtP+2MOc6Xs0a9yg0iJisdtKBHWWChp5jOrb3y7e0ovS89+WhSqlbBz28nxKVa+P3//ZO/Q9/+z917+r37l5hXAkM0CrAAAAAElFTkSuQmCC)
+                no-repeat;
+        }
+    }
+    .right {
+        li {
+            &.active {
+                background: red;
+                a {
+                    color: white;
+                }
+            }
+            &:hover {
+                background: red;
+                a {
+                    color: white;
+                }
+            }
+        }
+    }
+}
+//限时秒杀模块商品
+.miaoshagoods-box{
+    overflow: hidden;
+    position: relative;
+}
+.miaoshagoods {
+    border-top: 2px solid red;
+    border-bottom: 1px solid #ccc;
+    height: 261px;
+    width: 5000px;
+    //左右箭头     
+    &>a{
+        display: block;
+        width: 17px;
+        height: 43px;
+        position: absolute;
+        top: 50%;
+        margin-top:-21px;
+        z-index: 10;          
+    }
+    .left{
+        left: 0;
+        background: url(//z6.tuanimg.com/v3/src/img/common/big_bg_img_v3.png) -277px -440px;
+    }
+    .right{
+        right: 0;
+        background: url(//z6.tuanimg.com/v3/src/img/common/big_bg_img_v3.png) -307px -440px;
+    }
+    //秒杀商品样式
+    .items{
+        float: left;
+        margin-right: 18px;
+        transition: box-shadow 1s;
+        .imgbox{
+            height: 185px;
+            overflow: hidden;
+            position: relative;
+            img {
+                width: 185px;
+            }
+            .sub-title{
+                height: 20px;
+                width: 185px;
+                text-align: center;
+                color: white;
+                background: rgba(51, 51, 49, 0.5);
+                position: absolute;
+                bottom: -20px;
+                transition: bottom .3s;
+            }
+        }
+        em{
+            color: red;
+            margin-left:15px;
+            font-weight: 900;
+            line-height: 20px;
+        }
+        .title{
+            width: 165px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin: 10px auto 30px;
+        }
+        &:hover{
+            @include shadow();
+            .sub-title{
+                bottom: 0;
+            }
+        }
+    }       
+} 
+// 热销模块
+.hot{
+    @include wrapper();
+}   
+//热销模块头部
+.hot-top{
+    margin-top: 30px;
+    position: relative;
+    .left {
+        float: left;
+        span {
+            display: block;
+            float: left;
+            width: 130px;
+            height: 40px;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAAAeCAMAAADjAPfrAAAAgVBMVEUAAAD/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUYk/Ws/AAAAKnRSTlMAv39A8C/Q3w+PnyBgr1Bw7FkDtfSaeOY2/KgnFAjZxqRrZjkcuZSIU0UNcDsJAAAD7ElEQVRYw+2X2XbTMBRFryZrsp05aTpAoQzl/P8H4isplZ2ENAUeylqcB0uObGvrTlKoymh72z7Qe9QNBu2e6T3qI7oG+H5uSAEidSQgqUo2QbHB+QJgaNTksdB4E4OgkVoh/KHTXou2xTf6vMbnN6AJoOdQ0KagGTRx9JgGjABm49VMPnWlenzli76/Gs0Bemj80JiE5izg62M90PC7OhIL53WJ6U7PRbsklaZfTdY4+aRC0QG0RRIbr3EA+gboRivogJav1vwu2lOazC1wO9wssKL+1q4/XYEmyredzWieEYefhQWsoIixBEmWAOyhI1LnEtpyjq1FtwLj3GH+EYNGaEI0gBbCCKGBRjQFLZZZiEzIsWaEq0uhbor2EmuNuT7WVujvd8hRdg9gt8bmfKwJQL3chRLgrWCBqQcZGhnZirIczkujWBYQaiRzEc0PU8hiqDtAPGH3cIJm+mS+ihZR5pSoSuMqAIEZIMtyqv9PJF4pG5LMPFe0H5i7BboJWBvAygjVhrp8+witOKvF30CT2I72qxmlhKhC0YxZtMlowZDQyVde1u+P0JyeOrRNDuWoVep6hwa0R3tWM761YKQgXUx28j2jAEqqbJCzaF2QGlUl5me8wihHaumiPuBmcv+gEanKh5An75HEaR+5wBZfnTg0Bu44n8uDBcLQqFIIO1LX+/MGuyVN9Ah5JkMNu8bCcpHvAZV9dZIGpkESyUmsFTKot6BtTvZ0NfGoUuyyRAbjOhXB0go1DazM4qnz79afoLXFqkUq8MvqIlpz8OdCf1seivCXOt7l1XkAsgZfqGiTWCvk8tjRkjBB6wDtI13WHPeZbA+EwwHpqY7PylThMGp0ylSqsaZFVpraG3kWjbMTUF6wcjCwLqGt4biJGo+HM9EKfR03okuJ5CQVuV7yK79KAypoR2kQ0PILAlNdTtC7HHIresb6PlttEgNCDKSxnQ2YvmnJea1f0NrZxGoV7STWekPijVZ7TKZaaiZcYZv7X6YJCmUAOPIcV1xNZUGzkKNYu4hW+7X7ihYpH7/Apiy6TSwfJkZLc1ugTRtnTNHl8gAQMpqTUvqCFgraREc8+hq0hx0WjLYb+s8J7Su2x0YjNljH6QxPDsCMEiesYrS6pUZew2W0OHjSgrtXmE3fcMEwQ8Ax1Bb2garK+Sx7dJayOIBtnM7bjgpadyihgdu2pEFVRcvwbPjXtcF6QR4retrvo9tgP9m4lIDhNrSRk8ExZi5JSqvyJyk3ws8cMb325w+LjFZWYTtDV2i5ARqpEeZYbTTmx5b+ZWW8uO6oVKQ/V/8BB+0fI70rLX98a9bY26/yjv7rn9VPIVO5cVews8EAAAAASUVORK5CYII=) no-repeat;
+        }
+        i {
+            display: block;
+            float: left;
+            width: 5px;
+            height: 5px;
+            border-radius: 35%;
+            background: red;
+            margin: 15px 5px 0 25px;
+        }
+        p {
+            float: left;
+            margin-top: 10px;
+            a:hover{
+                color:red;
+            }
+        }
+    }
+}
+//热销模块内容
+.hot-banner{
+    border-top: 2px solid red;
+    display: flex;
+    justify-content: space-between;
+    .items{
+        transition: all .5s;
+        width: 232px;
+        @include shadow();
+    }
+}
+//今日更新
+.new{
+    border-top: 2px solid red;
+    @include wrapper();
+}
+//今日更新头部
+.new-top{
+    @include moduletop();
+    .left{
+        span{
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAAAeCAMAAADjAPfrAAAAeFBMVEUAAAD/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUanrrG4AAAAJ3RSTlMAQH+/nxDvMCDgYK9Qz3AE6dyP99YW/MeFZzmXeXWtXExIPCi4Ygx5Gm+TAAADNElEQVRYw+2W2XabMBCGpdECWgx4T5ylSZP0f/83rBkTkAzYxzltTy/yXdhoQfqORiMkvvnmn1NWYdM0S3X3U0xjFgCC+BsYUrZIXXw1FIqwwyeb+1pMoHFkYZJ31AgeX2FEW41JiIdywEowMlJwAErR8bjDWv94227f4t0S2JfTZrmbxAh5u1raXcmknqk18LAVHXV0aIops4Vmty+q0SftKH1BjtV4piiYFdYvWegVHJumNYAthGK3RE1RNiOrFTJDs1qCzCs8kTu+vrIr8rK1lsO6vGInRUa9x3M2mGWzLhWsHKagfEYpxhCAuVVW7Gbh226Wzq3rDR7FGds1DsOS8TZzRVTm5AZtLqkZKaW5QU0CThgL+HO1CDfOyDvoPrEtD2LCKZbsacnMq/HDjFq61xSrldROoEM7KPl+G/LAz3jKo7k1xhzQdEWPFuIp2Deyqv+aWvpPrCaRQHnmbHb5UbEB4z7LAVBF9wDqAqxn02AcuNmAXlV7Ozv+nxtrbbM/DF8B3z24zlFIPT3V7WrDytIQc/4RN1FUw/MX1eSRqvvXJzXfbbvjnz/FesgFU7b8mlfCOdRP5VTPIlWrZMYFtfzIzdX8Gi3LXOcpXlG7ngYD0cwFdKxmE7Ul3PKIzmOHzR9UU9DxwpFbnPaaN20Xlaht8CpmzzVGDnA0bHmjmgUWfBQrGzmQrg8otyoCtIMWVa72iPeRmbHD4HmDAxDFjWoAdHdHsLGNYOB+RJ6PfGgCSAFFAChRMw1+nBs8YC8mCTzL4KLz9WSjAkCWyxGA56na1xfcnA0pWzUJBAvENEM91odc4B7rYtKs4pvH5cODh7Z+cPYOQDcegVnJ/pgvAXfaa6FqW02qJjTW6brVj8D9pFk8XUCuqQWMcHxZIu2SKqU0UfSAogUHsuDEyNRqDbwPM+6xmzYrLEfmqhr3y4mi7Ctt/ka5olPWm8/hASQRbHNo9fHy8vGwBNzr/EZbDcX5+1qpHRJskNzOz1qKgpTNbkVd1hcWC5GqMdu7Bh0NzX4YolNJqeT7c1YsxQXIharoe8uKSKmye9Pzg1HcTmdf0Prnkw7h4elQiwsY8c1/zW8Cq75VCR94kQAAAABJRU5ErkJggg==) left top no-repeat;
+        }
+    }
+    .right {
+        li {
+            &.active {
+                background: red;
+                a {
+                    color: white;
+                }
+            }
+            &:hover {
+                a {
+                    color: red;
+                }
+            }
+        }
+    }
+}
+//今日更新内容
+.new-banner{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .items{
+        margin-bottom: 20px;
+        transition: box-shadow .5s;
+        width: 283px;
+        @include shadow();
+        img{
+            width: 283px;
+        }
+        .title{
+            padding: 5px;
+            span{
+                cursor: pointer;
+                float: left;
+                &:hover{
+                    color: red;
+                }
+            }
+            em{
+                float: right;
+            }
+        }
+        .price{
+            padding: 5px;
+            span{
+                color: red;
+                font-size: 14px;
+                float: left;
+            }
+            strong{
+                cursor: pointer;
+                float: right;
+                &:hover{
+                    color: red;
+                }
+            }
+            i{
+                display: inline-block;
+                width: 14px;
+                height: 14px;
+                background: url(//z6.tuanimg.com/v3/src/img/common/big_bg_img_v3.png) no-repeat -493px -64px;
+            }
+            em{
+                vertical-align: top;
+            }
+        }
+    }
+}
