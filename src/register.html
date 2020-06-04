@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登录</title>
     <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/register.css">
 </head>
 
 <body>
@@ -16,98 +16,71 @@
         <a href="www.zhe800.com" class="logo">
             <img src="//status.tuanimg.com/statics/zhe/dealList/img/login_logo.jpg" alt="">
         </a>
-        <!-- 右侧注册 -->
-        <p>还没有账号？<a href="register.html">立即注册</a></p>
+        <!-- 右侧登录 -->
+        <p>已经有团800或折800帐号了？<a href="register.html">去登陆</a></p>
     </div>
     <!-- 主体 -->
     <div class="content">
-        <!-- 主体左侧大图 -->
+        <!-- 主体左侧注册页面 -->
         <div class="ct_left">
-            <a href="www.zhe800.com">
-                <img src="http://d1.tuanimg.com/upload/dynamic_banner/image/403/130f4b3f21b106ab11a8c5b43eeb5cd4.jpg"
-                    alt="">
-            </a>
-        </div>
-        <!-- 主体右侧登陆页面 -->
-        <div class="ct_right">
-            <!-- 二维码登陆页面 -->
-            <div class="tbcbox" style="display: none;">
-                <div class="login-notices">
-                    <p>密码登陆在这里</p>
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABRdJREFUeNrcmU2IHEUUx/9VOzvZjbuDxiXH4FXiQdCjoHiRxZOKIIgQBMnRi0fj9CqBHDzFgznqIRDQCOLFg1HRi8FAjga8KNEQVo1kdSaz004/qz+rXlV1b8/HTqanh92Zranuql+99/7vVa0gogBAF0tytdRPkH2uBRV+eQ29c5dA94agKAIigpAy+U4tDiB0X6FeeVv+WQj1rl5mH8QtcTeRfS7awfqy56qXlCsgQWg/8zgeOPd6+l0yYHrVstSu2Fa/B057PrAwiZL29LfbTmzSNkA+aRsifc+frJ96nL4pLGQCHWgpcWQNtD/A6hMncfTNFyA21N/hf+nqkg2CbP3zdw5W9IlvzY2bfQabvLUocR8pMLxyHf0PP4PEpjEwkf0TUMW1u/kS3cbTFH59nRbh2sV2Mp/8kh4jxJbaKbVQFg/RXn9BVGCVWb1V0q3C/bKbw5FuUnB/HHuFRYnpTmYDayf/4FS4ITmuHF9bdy4BnaPpcyIuG60Kdi9U4pb2BFRbNNpjgWtOjryiAK+waHEAEwHBByydtDzAoI77aWklZrN8IrY62QD5nVRoFTEYKvqYi8DHo4oJyxpeyqBSmRdeKxDLLXByDXdaUSLPcNqFMZ5jrQmAGFQqCt6octrJyBhwYPkC5ACmZbhs51ZEpeu2xtCTLKaEIxRpDvGtG7eF7YpVOcqSCF49mAWJFU9yTJGMc9SO1xyG66HEYubK13EfYvd4lLOI6cmBtPsRz00mANUIYjuufGju88rFZmKgbPLe5Ju7jbBEA04xCsdSsOLNruNEpqWOgk7pcuZKVlYUbnXsSrUfGI4QaLXzKOi0LpdX52RAkUdqyypuO9/YsgyrL6ytBHlHmC6GbI8PRAJFpXkJjhSTs9rmZHnFYW8xxEzykCMA1iopKGFAkd64WT0P3rz58pVpMaoKobHyUKW8ZlCs9qva1NmbtjJ39YmIvcAm1CxcrghkNaFCKFzLkHfSdjyVSTKx12wqhRqAwqnS7S21KM03fjfULipYZWH6nHlPazrbZM9cP4LOhbf0/iWDUn93k0MR3V6pnmV9yFZINZ4wZFuQmAIod9jNdY3YbmHt9PNjbBJnuWNVUTOcJoZkumLR7TtjVemHcsXuNuwzjLEtRHfvJe//nDqP/S+uQqy11TY40gFK2hUS3yalfsKIKTLUyTqXsyuA4oiNl+UQKzI5Dwx/uIFImUdgY3Ig+cgW6Je+em4Pg8tXvBndsycKsu+7bsD7Jb16e25v8/+dHOjB797H4PznwP4QlJyY6mBOAts4CDRXWVkyCK/ewPDba11fNS03Hsb66efUysensWaOIWYx+z2+Vp86qS1LRHM7cRp++j3+fvmduFRyLNV+8jE89OMHU48hMcdr9PufsVUCBbDTuXgGW7cua0v1BzMZY65A8lgnL0zTgtY426P26sz++3A41vj5FhCGBo3E6Kdfi2C+++p7PE/t9dX3N1MHJEr9UAqsPHpivLR/GDHUe/sj9M5+XFmYGvGjwFRFUaKQ6y8+i84nZxK4+wb014nXMLr5G8pqOfukJy1qY0knz/accHz/q6QauW8ut3H2FHrvXlSyFjLZTfOscV6t/3USZH148lVWWXtjuzbM3GW7ZqnUbYzKzaP2WzSgqaEWESiHCpYJCJmVgmUCmghq0YHGhmoC0FhQTQGqDdUkoFpQTQM6EKqJQJVQTQUqhWoykBeq6UAO1DIAMagWludKKvT/BRgAxGkswbHG4XYAAAAASUVORK5CYII="
-                        alt="">
-                </div>
-                <p class="tbc-notices-t">手机扫码，安全登录</p>
-                <p class="tbc-notices-m"><i></i>打开<a href="https://www.zhe800.com/app#page1">折800APP</a>→我的→扫一扫</p>
-                <div class="tbc">
-                    <img src="./img/tbc.png" alt="">
-                </div>
-                <p class="tbc-notices-b">
-                    <a href="">密码登录</a>
-                    <a href="">立即注册</a>
-                </p>
-            </div>
             <!-- 密码登陆页面 -->
-            <div class="pwd">
-                <div class="login-notices">
-                    <p>扫码登陆更安全</p>
-                    <img src="data:image/png;base64,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"
-                        alt="">
-                </div>
-                <form action="">
-                    <p><input type="radio" id="zhe800Account" name="acount" checked><label
-                            for="zhe800Account">折800账号登陆</label>
-                        <input type="radio" id="phoneAccount" name="acount"><label for="phoneAccount">手机验证码登陆</label>
-                    </p>
-                    <!-- 用户名 -->
-                    <p class="username"><input type="text">
-                        <em></em></p>
-                        <!-- 密码 -->
-                    <p class="password"><input type="text">
-                        <em></em></p>
-                        <!-- 手机号 -->
-                    <p class="tel" style="display: none;"><input type="text">
-                        <em></em></p>
-                    <!-- 滑块 -->
-                    <p class="movebox">请按住滑块，拖到最右侧<strong class="moveblock">&gt;&gt;
-                        </strong>
-                        <span></span></p>
-                        <!-- 手机验证码 -->
-                        <div class="telCode" style="display: none;">
-                            <input type="text" name="" id="">
-                            <button>获取动态密码</button>
-                        </div>
-                        <!-- 登录按钮 -->
-                    <p class="pwdlogin">
-                        <button>登 录</button>
-                        <a href="" class="forgetpwd">忘记密码？</a>
-                    </p>
-                </form>
-
-            </div>
-            <p class="otherways">还可以使用这些账号登陆：</p>
-            <p>
-                <a href="https://graph.qq.com/oauth2.0/show?which=Login&display=pc&response_type=code&client_id=223621&redirect_uri=https%3A%2F%2Fpassport.tuan800.com%2Fusers%2Fauth%2Fqq_connect%2Fcallback&state=663c6231918a1351d6328165e2e5ed9d5fc740c590b782b2&scope=get_user_info%2Cadd_topic%2Cadd_share%2Ccheck_page_fans"
-                    class="qq"></a>
-                <a href="https://openapi.baidu.com/oauth/2.0/authorize?response_type=code&client_id=Z3CjjVkK57Gy1NW5XVUL96Vx&redirect_uri=https%3A%2F%2Fpassport.tuan800.com%2Fusers%2Fauth%2Fbaidu%2Fcallback&state=bd882c95df51cb90621d0c02b01afe903fc95552c5d30b73"
-                    class="baidu"></a>
-            </p>
+            <form action="">
+                <!-- 手机号 -->
+                <p class="tel"><label for="">&emsp;手机号：</label><input type="text">
+                    <em></em></p>
+                <!-- 密码 -->
+                <p class="password"><label for="">&emsp;&emsp;密码：</label><input type="text">
+                    <em></em></p>
+                <!-- 重复密码 -->
+                <p class="reppassword"><label for="">确认密码：</label><input type="text">
+                    <em></em></p>
+                <!-- 滑块 -->
+                <p class="movebox">请按住滑块，拖到最右侧<strong class="moveblock">&gt;&gt;
+                    </strong>
+                    <span></span></p>
+                <!-- 手机验证码 -->
+                <p class="telCode">
+                    <label for="">&emsp;验证码：</label><input type="text" name="" id=""><button>免费获取验证码</button>
+                </p>
+                <p class="agree"><input type="checkbox">我已经阅读并接受折800的《用户服务协议》</p>
+                <!-- 登录按钮 -->
+                <p class="pwdlogin">
+                    <button>同意协议并注册</button>
+                </p>
+            </form>
         </div>
-
+        <!-- 其他登录方式 -->
+        <div class="ct_right">
+            <p class="otherways">还可以使用这些账号登陆</p>
+            <div class="loginitemsbox">
+                <p class="loginitems">
+                    <a href="https://graph.qq.com/oauth2.0/show?which=Login&display=pc&response_type=code&client_id=223621&redirect_uri=https%3A%2F%2Fpassport.tuan800.com%2Fusers%2Fauth%2Fqq_connect%2Fcallback&state=663c6231918a1351d6328165e2e5ed9d5fc740c590b782b2&scope=get_user_info%2Cadd_topic%2Cadd_share%2Ccheck_page_fans"
+                        class="qq">QQ登录</a>
+                    <a href="https://openapi.baidu.com/oauth/2.0/authorize?response_type=code&client_id=Z3CjjVkK57Gy1NW5XVUL96Vx&redirect_uri=https%3A%2F%2Fpassport.tuan800.com%2Fusers%2Fauth%2Fbaidu%2Fcallback&state=bd882c95df51cb90621d0c02b01afe903fc95552c5d30b73"
+                        class="baidu">百度登录</a>
+                    <a href="https://graph.qq.com/oauth2.0/show?which=Login&display=pc&response_type=code&client_id=223621&redirect_uri=https%3A%2F%2Fpassport.tuan800.com%2Fusers%2Fauth%2Fqq_connect%2Fcallback&state=663c6231918a1351d6328165e2e5ed9d5fc740c590b782b2&scope=get_user_info%2Cadd_topic%2Cadd_share%2Ccheck_page_fans"
+                        class="tb">淘宝登录</a>
+                    <a href="https://openapi.baidu.com/oauth/2.0/authorize?response_type=code&client_id=Z3CjjVkK57Gy1NW5XVUL96Vx&redirect_uri=https%3A%2F%2Fpassport.tuan800.com%2Fusers%2Fauth%2Fbaidu%2Fcallback&state=bd882c95df51cb90621d0c02b01afe903fc95552c5d30b73"
+                        class="renren">人人登录</a>
+                </p>
+                <p class="more">更多</p>
+            </div>
+        </div>
     </div>
     <!-- 底部 -->
     <div class="footerbox">
         <div class="footer">
-            <p class="f-top">京ICP证120075号  京ICP备10051110号-5  京公网安备11010502025623  统一社会信用代码 91110105571298269B  食品流通许可证SP1101051510352397
-                出版物经营许可证 新出发京零字第朝160018号  Copyright©2011-2015 版权所有 ZHE800.COM</p>
-                <p class="f-bottom">
-                    <a href="//www.itrust.org.cn/yz/pjwx.asp?wm=3571298269" target="_blank">
-                    </a>
-                    <a href="//www.itrust.org.cn/yz/pjwx.asp?wm=3571298269" target="_blank">
-                    </a>
-                    <a href="//www.itrust.org.cn/yz/pjwx.asp?wm=3571298269" target="_blank">
-                    </a>
-                </p>
+            <p class="f-top">京ICP证120075号 京ICP备10051110号-5 京公网安备11010502025623 统一社会信用代码 91110105571298269B
+                食品流通许可证SP1101051510352397
+                出版物经营许可证 新出发京零字第朝160018号 Copyright©2011-2015 版权所有 ZHE800.COM</p>
+            <p class="f-bottom">
+                <a href="//www.itrust.org.cn/yz/pjwx.asp?wm=3571298269" target="_blank">
+                </a>
+                <a href="//www.itrust.org.cn/yz/pjwx.asp?wm=3571298269" target="_blank">
+                </a>
+                <a href="//www.itrust.org.cn/yz/pjwx.asp?wm=3571298269" target="_blank">
+                </a>
+            </p>
         </div>
     </div>
 </body>
