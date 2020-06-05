@@ -9,6 +9,19 @@ $mainWidth: 1200px;
 @mixin bdtype() {
     border: 1px solid #ccc;
 }
+// 右侧工具栏二级样式
+@mixin rightsubtool() {
+    width: 100px;
+    height: 34px;
+    background: red;
+    color: white;
+    line-height: 34px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 34px;
+    opacity: 0;
+}
 //模块头部
 @mixin moduletop {
     margin-top: 30px;
@@ -43,19 +56,19 @@ $mainWidth: 1200px;
         bottom: 0;
         li {
             float: left;
-            margin: 0 2px;
+
             padding: 8px;
         }
     }
 }
 //阴影效果
-@mixin shadow{
+@mixin shadow {
     &:hover {
         box-shadow: 5px 0px 10px lightgray, -5px 0px 10px lightgray;
     }
 }
 body {
-    background: $bgcolor-l;
+    background: white;
 }
 // 顶部悬浮导航
 .topnav {
@@ -277,7 +290,7 @@ body {
         &:hover {
             box-shadow: 5px 0 10px #ddd, -5px 0 10px #ddd;
             border-bottom: 2px solid #ec1611;
-            a{
+            a {
                 color: red;
             }
         }
@@ -338,7 +351,7 @@ body {
         a {
             display: inline-block;
             height: 29px;
-            &:hover{
+            &:hover {
                 color: red;
             }
         }
@@ -509,7 +522,7 @@ body {
     }
 }
 //限时秒杀模块商品
-.miaoshagoods-box{
+.miaoshagoods-box {
     overflow: hidden;
     position: relative;
 }
@@ -518,37 +531,37 @@ body {
     border-bottom: 1px solid #ccc;
     height: 261px;
     width: 5000px;
-    //左右箭头     
-    &>a{
+    //左右箭头
+    & > a {
         display: block;
         width: 17px;
         height: 43px;
         position: absolute;
         top: 50%;
-        margin-top:-21px;
-        z-index: 10;          
+        margin-top: -21px;
+        z-index: 10;
     }
-    .left{
+    .left {
         left: 0;
         background: url(//z6.tuanimg.com/v3/src/img/common/big_bg_img_v3.png) -277px -440px;
     }
-    .right{
+    .right {
         right: 0;
         background: url(//z6.tuanimg.com/v3/src/img/common/big_bg_img_v3.png) -307px -440px;
     }
     //秒杀商品样式
-    .items{
+    .items {
         float: left;
         margin-right: 18px;
         transition: box-shadow 1s;
-        .imgbox{
+        .imgbox {
             height: 185px;
             overflow: hidden;
             position: relative;
             img {
                 width: 185px;
             }
-            .sub-title{
+            .sub-title {
                 height: 20px;
                 width: 185px;
                 text-align: center;
@@ -556,36 +569,36 @@ body {
                 background: rgba(51, 51, 49, 0.5);
                 position: absolute;
                 bottom: -20px;
-                transition: bottom .3s;
+                transition: bottom 0.3s;
             }
         }
-        em{
+        em {
             color: red;
-            margin-left:15px;
+            margin-left: 15px;
             font-weight: 900;
             line-height: 20px;
         }
-        .title{
+        .title {
             width: 165px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
             margin: 10px auto 30px;
         }
-        &:hover{
+        &:hover {
             @include shadow();
-            .sub-title{
+            .sub-title {
                 bottom: 0;
             }
         }
-    }       
-} 
+    }
+}
 // 热销模块
-.hot{
+.hot {
     @include wrapper();
-}   
+}
 //热销模块头部
-.hot-top{
+.hot-top {
     margin-top: 30px;
     position: relative;
     .left {
@@ -595,7 +608,8 @@ body {
             float: left;
             width: 130px;
             height: 40px;
-            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAAAeCAMAAADjAPfrAAAAgVBMVEUAAAD/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUYk/Ws/AAAAKnRSTlMAv39A8C/Q3w+PnyBgr1Bw7FkDtfSaeOY2/KgnFAjZxqRrZjkcuZSIU0UNcDsJAAAD7ElEQVRYw+2X2XbTMBRFryZrsp05aTpAoQzl/P8H4isplZ2ENAUeylqcB0uObGvrTlKoymh72z7Qe9QNBu2e6T3qI7oG+H5uSAEidSQgqUo2QbHB+QJgaNTksdB4E4OgkVoh/KHTXou2xTf6vMbnN6AJoOdQ0KagGTRx9JgGjABm49VMPnWlenzli76/Gs0Bemj80JiE5izg62M90PC7OhIL53WJ6U7PRbsklaZfTdY4+aRC0QG0RRIbr3EA+gboRivogJav1vwu2lOazC1wO9wssKL+1q4/XYEmyredzWieEYefhQWsoIixBEmWAOyhI1LnEtpyjq1FtwLj3GH+EYNGaEI0gBbCCKGBRjQFLZZZiEzIsWaEq0uhbor2EmuNuT7WVujvd8hRdg9gt8bmfKwJQL3chRLgrWCBqQcZGhnZirIczkujWBYQaiRzEc0PU8hiqDtAPGH3cIJm+mS+ihZR5pSoSuMqAIEZIMtyqv9PJF4pG5LMPFe0H5i7BboJWBvAygjVhrp8+witOKvF30CT2I72qxmlhKhC0YxZtMlowZDQyVde1u+P0JyeOrRNDuWoVep6hwa0R3tWM761YKQgXUx28j2jAEqqbJCzaF2QGlUl5me8wihHaumiPuBmcv+gEanKh5An75HEaR+5wBZfnTg0Bu44n8uDBcLQqFIIO1LX+/MGuyVN9Ah5JkMNu8bCcpHvAZV9dZIGpkESyUmsFTKot6BtTvZ0NfGoUuyyRAbjOhXB0go1DazM4qnz79afoLXFqkUq8MvqIlpz8OdCf1seivCXOt7l1XkAsgZfqGiTWCvk8tjRkjBB6wDtI13WHPeZbA+EwwHpqY7PylThMGp0ylSqsaZFVpraG3kWjbMTUF6wcjCwLqGt4biJGo+HM9EKfR03okuJ5CQVuV7yK79KAypoR2kQ0PILAlNdTtC7HHIresb6PlttEgNCDKSxnQ2YvmnJea1f0NrZxGoV7STWekPijVZ7TKZaaiZcYZv7X6YJCmUAOPIcV1xNZUGzkKNYu4hW+7X7ihYpH7/Apiy6TSwfJkZLc1ugTRtnTNHl8gAQMpqTUvqCFgraREc8+hq0hx0WjLYb+s8J7Su2x0YjNljH6QxPDsCMEiesYrS6pUZew2W0OHjSgrtXmE3fcMEwQ8Ax1Bb2garK+Sx7dJayOIBtnM7bjgpadyihgdu2pEFVRcvwbPjXtcF6QR4retrvo9tgP9m4lIDhNrSRk8ExZi5JSqvyJyk3ws8cMb325w+LjFZWYTtDV2i5ARqpEeZYbTTmx5b+ZWW8uO6oVKQ/V/8BB+0fI70rLX98a9bY26/yjv7rn9VPIVO5cVews8EAAAAASUVORK5CYII=) no-repeat;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAAAeCAMAAADjAPfrAAAAgVBMVEUAAAD/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUYk/Ws/AAAAKnRSTlMAv39A8C/Q3w+PnyBgr1Bw7FkDtfSaeOY2/KgnFAjZxqRrZjkcuZSIU0UNcDsJAAAD7ElEQVRYw+2X2XbTMBRFryZrsp05aTpAoQzl/P8H4isplZ2ENAUeylqcB0uObGvrTlKoymh72z7Qe9QNBu2e6T3qI7oG+H5uSAEidSQgqUo2QbHB+QJgaNTksdB4E4OgkVoh/KHTXou2xTf6vMbnN6AJoOdQ0KagGTRx9JgGjABm49VMPnWlenzli76/Gs0Bemj80JiE5izg62M90PC7OhIL53WJ6U7PRbsklaZfTdY4+aRC0QG0RRIbr3EA+gboRivogJav1vwu2lOazC1wO9wssKL+1q4/XYEmyredzWieEYefhQWsoIixBEmWAOyhI1LnEtpyjq1FtwLj3GH+EYNGaEI0gBbCCKGBRjQFLZZZiEzIsWaEq0uhbor2EmuNuT7WVujvd8hRdg9gt8bmfKwJQL3chRLgrWCBqQcZGhnZirIczkujWBYQaiRzEc0PU8hiqDtAPGH3cIJm+mS+ihZR5pSoSuMqAIEZIMtyqv9PJF4pG5LMPFe0H5i7BboJWBvAygjVhrp8+witOKvF30CT2I72qxmlhKhC0YxZtMlowZDQyVde1u+P0JyeOrRNDuWoVep6hwa0R3tWM761YKQgXUx28j2jAEqqbJCzaF2QGlUl5me8wihHaumiPuBmcv+gEanKh5An75HEaR+5wBZfnTg0Bu44n8uDBcLQqFIIO1LX+/MGuyVN9Ah5JkMNu8bCcpHvAZV9dZIGpkESyUmsFTKot6BtTvZ0NfGoUuyyRAbjOhXB0go1DazM4qnz79afoLXFqkUq8MvqIlpz8OdCf1seivCXOt7l1XkAsgZfqGiTWCvk8tjRkjBB6wDtI13WHPeZbA+EwwHpqY7PylThMGp0ylSqsaZFVpraG3kWjbMTUF6wcjCwLqGt4biJGo+HM9EKfR03okuJ5CQVuV7yK79KAypoR2kQ0PILAlNdTtC7HHIresb6PlttEgNCDKSxnQ2YvmnJea1f0NrZxGoV7STWekPijVZ7TKZaaiZcYZv7X6YJCmUAOPIcV1xNZUGzkKNYu4hW+7X7ihYpH7/Apiy6TSwfJkZLc1ugTRtnTNHl8gAQMpqTUvqCFgraREc8+hq0hx0WjLYb+s8J7Su2x0YjNljH6QxPDsCMEiesYrS6pUZew2W0OHjSgrtXmE3fcMEwQ8Ax1Bb2garK+Sx7dJayOIBtnM7bjgpadyihgdu2pEFVRcvwbPjXtcF6QR4retrvo9tgP9m4lIDhNrSRk8ExZi5JSqvyJyk3ws8cMb325w+LjFZWYTtDV2i5ARqpEeZYbTTmx5b+ZWW8uO6oVKQ/V/8BB+0fI70rLX98a9bY26/yjv7rn9VPIVO5cVews8EAAAAASUVORK5CYII=)
+                no-repeat;
         }
         i {
             display: block;
@@ -609,101 +623,714 @@ body {
         p {
             float: left;
             margin-top: 10px;
-            a:hover{
-                color:red;
+            a:hover {
+                color: red;
             }
         }
     }
 }
 //热销模块内容
-.hot-banner{
+.hot-banner {
     border-top: 2px solid red;
     display: flex;
     justify-content: space-between;
-    .items{
-        transition: all .5s;
+    .items {
+        transition: all 0.5s;
         width: 232px;
         @include shadow();
     }
 }
 //今日更新
-.new{
+.new {
     border-top: 2px solid red;
     @include wrapper();
 }
 //今日更新头部
-.new-top{
+.new-top {
     @include moduletop();
-    .left{
-        span{
-            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAAAeCAMAAADjAPfrAAAAeFBMVEUAAAD/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUanrrG4AAAAJ3RSTlMAQH+/nxDvMCDgYK9Qz3AE6dyP99YW/MeFZzmXeXWtXExIPCi4Ygx5Gm+TAAADNElEQVRYw+2W2XabMBCGpdECWgx4T5ylSZP0f/83rBkTkAzYxzltTy/yXdhoQfqORiMkvvnmn1NWYdM0S3X3U0xjFgCC+BsYUrZIXXw1FIqwwyeb+1pMoHFkYZJ31AgeX2FEW41JiIdywEowMlJwAErR8bjDWv94227f4t0S2JfTZrmbxAh5u1raXcmknqk18LAVHXV0aIops4Vmty+q0SftKH1BjtV4piiYFdYvWegVHJumNYAthGK3RE1RNiOrFTJDs1qCzCs8kTu+vrIr8rK1lsO6vGInRUa9x3M2mGWzLhWsHKagfEYpxhCAuVVW7Gbh226Wzq3rDR7FGds1DsOS8TZzRVTm5AZtLqkZKaW5QU0CThgL+HO1CDfOyDvoPrEtD2LCKZbsacnMq/HDjFq61xSrldROoEM7KPl+G/LAz3jKo7k1xhzQdEWPFuIp2Deyqv+aWvpPrCaRQHnmbHb5UbEB4z7LAVBF9wDqAqxn02AcuNmAXlV7Ozv+nxtrbbM/DF8B3z24zlFIPT3V7WrDytIQc/4RN1FUw/MX1eSRqvvXJzXfbbvjnz/FesgFU7b8mlfCOdRP5VTPIlWrZMYFtfzIzdX8Gi3LXOcpXlG7ngYD0cwFdKxmE7Ul3PKIzmOHzR9UU9DxwpFbnPaaN20Xlaht8CpmzzVGDnA0bHmjmgUWfBQrGzmQrg8otyoCtIMWVa72iPeRmbHD4HmDAxDFjWoAdHdHsLGNYOB+RJ6PfGgCSAFFAChRMw1+nBs8YC8mCTzL4KLz9WSjAkCWyxGA56na1xfcnA0pWzUJBAvENEM91odc4B7rYtKs4pvH5cODh7Z+cPYOQDcegVnJ/pgvAXfaa6FqW02qJjTW6brVj8D9pFk8XUCuqQWMcHxZIu2SKqU0UfSAogUHsuDEyNRqDbwPM+6xmzYrLEfmqhr3y4mi7Ctt/ka5olPWm8/hASQRbHNo9fHy8vGwBNzr/EZbDcX5+1qpHRJskNzOz1qKgpTNbkVd1hcWC5GqMdu7Bh0NzX4YolNJqeT7c1YsxQXIharoe8uKSKmye9Pzg1HcTmdf0Prnkw7h4elQiwsY8c1/zW8Cq75VCR94kQAAAABJRU5ErkJggg==) left top no-repeat;
+    .left {
+        span {
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAAAeCAMAAADjAPfrAAAAeFBMVEUAAAD/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUb/PUanrrG4AAAAJ3RSTlMAQH+/nxDvMCDgYK9Qz3AE6dyP99YW/MeFZzmXeXWtXExIPCi4Ygx5Gm+TAAADNElEQVRYw+2W2XabMBCGpdECWgx4T5ylSZP0f/83rBkTkAzYxzltTy/yXdhoQfqORiMkvvnmn1NWYdM0S3X3U0xjFgCC+BsYUrZIXXw1FIqwwyeb+1pMoHFkYZJ31AgeX2FEW41JiIdywEowMlJwAErR8bjDWv94227f4t0S2JfTZrmbxAh5u1raXcmknqk18LAVHXV0aIops4Vmty+q0SftKH1BjtV4piiYFdYvWegVHJumNYAthGK3RE1RNiOrFTJDs1qCzCs8kTu+vrIr8rK1lsO6vGInRUa9x3M2mGWzLhWsHKagfEYpxhCAuVVW7Gbh226Wzq3rDR7FGds1DsOS8TZzRVTm5AZtLqkZKaW5QU0CThgL+HO1CDfOyDvoPrEtD2LCKZbsacnMq/HDjFq61xSrldROoEM7KPl+G/LAz3jKo7k1xhzQdEWPFuIp2Deyqv+aWvpPrCaRQHnmbHb5UbEB4z7LAVBF9wDqAqxn02AcuNmAXlV7Ozv+nxtrbbM/DF8B3z24zlFIPT3V7WrDytIQc/4RN1FUw/MX1eSRqvvXJzXfbbvjnz/FesgFU7b8mlfCOdRP5VTPIlWrZMYFtfzIzdX8Gi3LXOcpXlG7ngYD0cwFdKxmE7Ul3PKIzmOHzR9UU9DxwpFbnPaaN20Xlaht8CpmzzVGDnA0bHmjmgUWfBQrGzmQrg8otyoCtIMWVa72iPeRmbHD4HmDAxDFjWoAdHdHsLGNYOB+RJ6PfGgCSAFFAChRMw1+nBs8YC8mCTzL4KLz9WSjAkCWyxGA56na1xfcnA0pWzUJBAvENEM91odc4B7rYtKs4pvH5cODh7Z+cPYOQDcegVnJ/pgvAXfaa6FqW02qJjTW6brVj8D9pFk8XUCuqQWMcHxZIu2SKqU0UfSAogUHsuDEyNRqDbwPM+6xmzYrLEfmqhr3y4mi7Ctt/ka5olPWm8/hASQRbHNo9fHy8vGwBNzr/EZbDcX5+1qpHRJskNzOz1qKgpTNbkVd1hcWC5GqMdu7Bh0NzX4YolNJqeT7c1YsxQXIharoe8uKSKmye9Pzg1HcTmdf0Prnkw7h4elQiwsY8c1/zW8Cq75VCR94kQAAAABJRU5ErkJggg==)
+                left top no-repeat;
         }
     }
     .right {
         li {
+            
+            &:hover {
+                a {
+                    color: red;
+                }
+            }
             &.active {
                 background: red;
                 a {
                     color: white;
                 }
             }
-            &:hover {
-                a {
-                    color: red;
-                }
-            }
         }
     }
 }
 //今日更新内容
-.new-banner{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    .items{
+.new-banner {
+    // display: flex;
+    // // justify-content: space-around;
+    // flex-wrap: wrap;
+    .items {
+        float: left;
         margin-bottom: 20px;
-        transition: box-shadow .5s;
+        margin-right: 22.66px;
+        transition: box-shadow 0.5s;
         width: 283px;
+
         @include shadow();
-        img{
+        img {
             width: 283px;
         }
-        .title{
+        .title {
             padding: 5px;
-            span{
+            span {
                 cursor: pointer;
                 float: left;
-                &:hover{
+                &:hover {
                     color: red;
                 }
             }
-            em{
+            em {
                 float: right;
             }
         }
-        .price{
+        .price {
             padding: 5px;
-            span{
+            span {
                 color: red;
                 font-size: 14px;
                 float: left;
             }
-            strong{
+            strong {
                 cursor: pointer;
                 float: right;
-                &:hover{
+                &:hover {
                     color: red;
                 }
             }
-            i{
+            i {
                 display: inline-block;
                 width: 14px;
                 height: 14px;
                 background: url(//z6.tuanimg.com/v3/src/img/common/big_bg_img_v3.png) no-repeat -493px -64px;
             }
-            em{
+            em {
                 vertical-align: top;
             }
+        }
+    }
+}
+
+// 底部
+.footer {
+    width: 100%;
+    border-top: 3px solid red;
+    .footcontent {
+        @include wrapper();
+    }
+}
+// 底部上部分
+.foottop {
+    display: flex;
+    justify-content: space-between;
+    .items {
+        padding-top: 30px;
+        em {
+            width: 80px;
+            height: 80px;
+            display: block;
+        }
+        h4 {
+            font-weight: 900;
+            text-align: center;
+            line-height: 30px;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        p {
+            text-align: center;
+            line-height: 25px;
+            a:hover{
+                color: red;
+            }
+        }
+    }
+    .item1 {
+        em {
+            background: url(//status.tuanimg.com/statics/zhe/common/img/foot_icon.png) no-repeat;
+        }
+    }
+    .item2 {
+        em {
+            background: url(//status.tuanimg.com/statics/zhe/common/img/foot_icon.png) no-repeat -95px 0;
+        }
+    }
+    .item3 {
+        em {
+            background: url(//status.tuanimg.com/statics/zhe/common/img/foot_icon.png) no-repeat -190px 0;
+        }
+    }
+    .item4 {
+        em {
+            background: url(//status.tuanimg.com/statics/zhe/common/img/foot_icon.png) no-repeat 0 -95px;
+        }
+    }
+    .item5 {
+        em {
+            background: url(//status.tuanimg.com/statics/zhe/common/img/foot_icon.png) no-repeat -95px -95px;
+        }
+    }
+    .item6 {
+        strong {
+            display: block;
+            width: 104px;
+            height: 220px;
+            background: url(//status.tuanimg.com/statics/zhe/common/img/footer_code.png) 0 0 no-repeat;
+        }
+        h3 {
+            font-size: 14px;
+            text-indent: -7px;
+        }
+    }
+}
+// 底部下部分
+.footbottom {
+    width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 30px;
+    margin-top: 50px;
+    a {
+        display: inline-block;
+        width: 70px;
+        height: 26px;
+        &:nth-child(1) {
+            background: url(../img/shouye_new_img.png) -886px -626px;
+        }
+        &:nth-child(2) {
+            background: url(../img/shouye_new_img.png) -886px -660px;
+        }
+        &:nth-child(3) {
+            background: url(../img/shouye_new_img.png) -886px -699px;
+        }
+    }
+}
+//左侧悬浮菜单
+.left-menu {
+    position: fixed;
+    left: 70px;
+    top: 50%;
+    width: 145px;
+    transform: translate(0, -50%);
+    background: white;
+    // border: 1px solid red;
+    box-shadow: 2px 0 2px 2px #ccc;
+    h3 {
+        width: 120px;
+        height: 25px;
+        background: rgb(231, 106, 133);
+        color: white;
+        margin: 10px auto;
+        text-align: center;
+        line-height: 25px;
+        cursor: pointer;
+    }
+}
+//左侧悬浮上小导航
+.top-nav {
+    margin: 0 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    h4 {
+        line-height: 30px;
+        text-align: center;
+        a {
+            margin: 0 4px;
+            position: relative;
+            &:hover {
+                color: red;
+            }
+            i {
+                display: block;
+                width: 19px;
+                height: 9px;
+                background: url(//z5.tuanimg.com/v2/core/img/shouye_new_img.png) -379px -35px no-repeat;
+                position: absolute;
+                top: -10px;
+                left: 5px;
+            }
+        }
+    }
+}
+// 左侧悬浮中间导航
+.mid-nav {
+    ul {
+        width: 145px;
+        // display: flex;
+        // justify-content: space-around;
+        // flex-wrap: wrap;
+        li {
+            width: 58px;
+            margin: 5px 0 5px 13px;
+            float: left;
+            &:hover {
+                a {
+                    color: red;
+                }
+            }
+            i {
+                display: inline-block;
+                // margin-right: 2px;
+                height: 20px;
+                width: 20px;
+                background: url(//z5.tuanimg.com/v2/core/img/shouye_new_img.png) no-repeat;
+                vertical-align: middle;
+            }
+            &:nth-child(1) {
+                i {
+                    background-position: -576px -48px;
+                }
+            }
+            &:nth-child(2) {
+                i {
+                    background-position: -639px -48px;
+                }
+            }
+            &:nth-child(3) {
+                i {
+                    background-position: -576px -77px;
+                }
+            }
+            &:nth-child(4) {
+                i {
+                    background-position: -639px -77px;
+                }
+            }
+            &:nth-child(5) {
+                i {
+                    background-position: -576px -105px;
+                }
+            }
+            &:nth-child(6) {
+                i {
+                    background-position: -639px -105px;
+                }
+            }
+            &:nth-child(7) {
+                i {
+                    background-position: -576px -133px;
+                }
+            }
+            &:nth-child(8) {
+                i {
+                    background-position: -639px -133px;
+                }
+            }
+            &:nth-child(9) {
+                i {
+                    background-position: -576px -160px;
+                }
+            }
+            &:nth-child(10) {
+                i {
+                    background-position: -639px -160px;
+                }
+            }
+            &:nth-child(11) {
+                i {
+                    background-position: -576px -189px;
+                }
+            }
+            &:nth-child(12) {
+                i {
+                    background-position: -639px -189px;
+                }
+            }
+            &:nth-child(13) {
+                i {
+                    background-position: -576px -216px;
+                }
+            }
+            &:nth-child(14) {
+                i {
+                    background-position: -639px -216px;
+                }
+            }
+            &:nth-child(15) {
+                i {
+                    background-position: -576px -244px;
+                }
+            }
+            &:nth-child(16) {
+                i {
+                    background-position: -639px -244px;
+                }
+            }
+            &:nth-child(1):hover {
+                i {
+                    background-position: -700px -5px;
+                }
+            }
+            &:nth-child(2):hover {
+                i {
+                    background-position: -763px -5px;
+                }
+            }
+            &:nth-child(3):hover {
+                i {
+                    background-position: -700px -34px;
+                }
+            }
+            &:nth-child(4):hover {
+                i {
+                    background-position: -763px -34px;
+                }
+            }
+            &:nth-child(5):hover {
+                i {
+                    background-position: -700px -62px;
+                }
+            }
+            &:nth-child(6):hover {
+                i {
+                    background-position: -763px -62px;
+                }
+            }
+            &:nth-child(7):hover {
+                i {
+                    background-position: -700px -90px;
+                }
+            }
+            &:nth-child(8):hover {
+                i {
+                    background-position: -763px -90px;
+                }
+            }
+            &:nth-child(9):hover {
+                i {
+                    background-position: -700px -117px;
+                }
+            }
+            &:nth-child(10):hover {
+                i {
+                    background-position: -763px -117px;
+                }
+            }
+            &:nth-child(11):hover {
+                i {
+                    background-position: -700px -146px;
+                }
+            }
+            &:nth-child(12):hover {
+                i {
+                    background-position: -763px -146px;
+                }
+            }
+            &:nth-child(13):hover {
+                i {
+                    background-position: -700px -173px;
+                }
+            }
+            &:nth-child(14):hover {
+                i {
+                    background-position: -763px -173px;
+                }
+            }
+            &:nth-child(15):hover {
+                i {
+                    background-position: -700px -201px;
+                }
+            }
+            &:nth-child(16):hover {
+                i {
+                    background-position: -763px -201px;
+                }
+            }
+        }
+    }
+}
+//左侧悬浮导航小搜索框
+.s-search {
+    border-bottom: 1px solid #ccc;
+    form {
+        width: 100px;
+        margin: 0 auto;
+        position: relative;
+        .searchcontent {
+            float: left;
+            border: 0;
+            border: 1px solid #ccc;
+            margin: 10px auto;
+            width: 100px;
+            height: 30px;
+            outline: 0;
+            padding-right: 35px;
+            box-sizing: border-box;
+        }
+        .search-btn {
+            position: absolute;
+            top: 6px;
+            right: 3px;
+            width: 25px;
+            height: 27px;
+            margin-top: 6px;
+            padding: 3px;
+            border: 0;
+            border-left: 1px solid #ccc;
+            background-color: #fff;
+            outline: 0;
+
+            cursor: pointer;
+            background: url(//z5.tuanimg.com/v2/core/img/shouye_new_img.png) no-repeat #fff -313px -201px;
+        }
+    }
+}
+// 悬浮底部
+.bottom-nav {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 10px;
+    a {
+        padding: 0 5px;
+        &:hover {
+            color: red;
+        }
+    }
+}
+//右侧工具栏
+.right-toolbar {
+    width: 34px;
+    height: 100%;
+    background: black;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+// 右侧工具栏上部分
+.right-toolbar-top {
+    // 购物车
+    .shopcar {
+        padding: 10px 0;
+        margin-top: 20px;
+        em {
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin: 10px auto;
+            background: url(//status.tuanimg.com/statics/zhe/common/img/sidebar_cart.png) no-repeat;
+        }
+        p {
+            color: white;
+            margin: 0 auto;
+            width: 20px;
+            text-align: center;
+        }
+        i {
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin: 10px auto;
+            border-radius: 50%;
+            color: white;
+            background: red;
+            text-align: center;
+            line-height: 20px;
+        }
+        &:hover {
+            background: red;
+            i {
+                color: red;
+                background: white;
+            }
+        }
+    }
+    .order,
+    .coupon,
+    .collect,
+    .message {
+        width: 34px;
+        height: 34px;
+        position: relative;
+        
+    }
+    // 我的订单
+    .order {
+        background: url(//z5.tuanimg.com/v2/core/img/side_golds.png) no-repeat 6px -193px;
+        &:hover{
+            background-color: red;
+            .suborder{
+                opacity: 1;
+            }
+        }
+        .suborder {
+            @include rightsubtool();
+        }
+    }
+    // 优惠券
+    .coupon {
+        background: url(//z5.tuanimg.com/v2/core/img/quan_iconnew.png) no-repeat 7px 7px;
+        &:hover{
+            background-color: red;
+            .subcoupon{
+                opacity: 1;
+            }
+        }
+        .subcoupon {
+            @include rightsubtool();
+        }
+    }
+    // 收藏
+    .collect {
+        background: url(//z5.tuanimg.com/v2/core/img/myFavorites.png) no-repeat 7px 7px;
+        &:hover{
+            background-color: red;
+            .subcollect{
+                opacity: 1;
+            }
+        }
+        .subcollect {
+            @include rightsubtool();
+        }
+    }
+    // 卖家消息
+    .message {
+        background: url(//z5.tuanimg.com/v2/core/img/side_golds.png) no-repeat 4px -232px;
+        &:hover{
+            background-color: red;
+            .submessage{
+                opacity: 1;
+            }
+        }
+        .submessage {
+            @include rightsubtool();
+        }
+    }
+}
+// 右侧工具栏下部分
+.right-toolbar-bottom{
+    position: absolute;
+    bottom: 0;
+    background: black;
+    .icon,.rulo,.r-tbc,.question,.advice,.topbtn{
+        width: 34px;
+        height: 34px;
+        position: relative;
+    }
+    // 签到
+    .icon{
+        background: url(//z5.tuanimg.com/v2/core/img/sidePanel_checkin1N.gif) no-repeat;
+        &:hover{
+            background:red url(//z5.tuanimg.com/v2/core/img/side_golds.png) no-repeat 0 -47px;
+            .subicon{
+                opacity: 1;
+            }
+        }
+        .subicon {
+            @include rightsubtool();
+            font-size: 12px;
+            line-height: 16px;
+        }
+    }
+    // 角色选择
+    .rulo{
+        background: url(//z5.tuanimg.com/v2/core/img/sidePanelIconsNew.png) no-repeat -386px 0;
+        &:hover{
+            background-color: red;
+            .subrulo{
+                opacity: 1;
+            }
+        }
+        .subrulo {
+            @include rightsubtool();
+            width: 165px;
+            p{
+                padding-left: 20px;
+            }
+            em,i,b{
+                display: block;
+                height: 20px;
+                border:1px solid white;
+                border-radius: 5px;
+                float: left;
+                line-height: 20px;
+                padding: 0 5px;
+                margin: 5px 2px;
+            }
+            strong{
+                display: block;
+                height: 20px;
+                border-radius: 5px;
+                float: left;
+                line-height: 20px;
+                padding: 0 5px;
+                margin: 5px 2px;
+                background: white;
+                color: red;
+            };
+        }
+    }
+    // 二维码
+    .r-tbc{
+        background: url(//z5.tuanimg.com/v2/core/img/sidePanelIconsNew.png) no-repeat -267px 0;
+        &:hover{
+            background-color: red;
+            .sub-r-tbc{
+                opacity: 1;
+            }
+        }
+        .sub-r-tbc {
+            width: 105px;
+            height: 150px;
+            position: absolute;
+            top: -15px;
+            right: 34px;
+            background: url(//status.tuanimg.com/statics/zhe/components/sidebar/img/side_two_dimension.png) no-repeat 0 0;
+            opacity: 0;
+        }
+    }
+    // 问题
+    .question{
+        background: url(//z5.tuanimg.com/v2/core/img/sidePanelIconsNew.png) no-repeat -330px 0;
+        &:hover{
+            background-color: red;
+            .subquestion{
+                opacity: 1;
+            }
+        }
+        .subquestion {
+            @include rightsubtool();
+        }
+    }
+    // 意见
+    .advice{
+        background: url(//z5.tuanimg.com/v2/core/img/sidePanelIconsNew.png) no-repeat -501px 0;
+        &:hover{
+            background-color: red;
+            .subadvice{
+                opacity: 1;
+            }
+        }
+        .subadvice {
+            @include rightsubtool();
+        }
+    }
+    // 回顶部按钮
+    .topbtn{
+        background: url(//z5.tuanimg.com/v2/core/img/sidePanelIconsNew.png) no-repeat -554px 0;
+        &:hover{
+            background-color: red;
+            .subtopbtn{
+                opacity: 1;
+            }
+        }
+        .subtopbtn {
+            @include rightsubtool();
         }
     }
 }
