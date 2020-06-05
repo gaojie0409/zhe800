@@ -31,7 +31,7 @@
         <!-- 主体右侧登陆页面 -->
         <div class="ct_right">
             <!-- 二维码登陆页面 -->
-            <div class="tbcbox" style="display: none;">
+            <div class="tbcbox">
                 <div class="login-notices">
                     <p>密码登陆在这里</p>
                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABRdJREFUeNrcmU2IHEUUx/9VOzvZjbuDxiXH4FXiQdCjoHiRxZOKIIgQBMnRi0fj9CqBHDzFgznqIRDQCOLFg1HRi8FAjga8KNEQVo1kdSaz004/qz+rXlV1b8/HTqanh92Zranuql+99/7vVa0gogBAF0tytdRPkH2uBRV+eQ29c5dA94agKAIigpAy+U4tDiB0X6FeeVv+WQj1rl5mH8QtcTeRfS7awfqy56qXlCsgQWg/8zgeOPd6+l0yYHrVstSu2Fa/B057PrAwiZL29LfbTmzSNkA+aRsifc+frJ96nL4pLGQCHWgpcWQNtD/A6hMncfTNFyA21N/hf+nqkg2CbP3zdw5W9IlvzY2bfQabvLUocR8pMLxyHf0PP4PEpjEwkf0TUMW1u/kS3cbTFH59nRbh2sV2Mp/8kh4jxJbaKbVQFg/RXn9BVGCVWb1V0q3C/bKbw5FuUnB/HHuFRYnpTmYDayf/4FS4ITmuHF9bdy4BnaPpcyIuG60Kdi9U4pb2BFRbNNpjgWtOjryiAK+waHEAEwHBByydtDzAoI77aWklZrN8IrY62QD5nVRoFTEYKvqYi8DHo4oJyxpeyqBSmRdeKxDLLXByDXdaUSLPcNqFMZ5jrQmAGFQqCt6octrJyBhwYPkC5ACmZbhs51ZEpeu2xtCTLKaEIxRpDvGtG7eF7YpVOcqSCF49mAWJFU9yTJGMc9SO1xyG66HEYubK13EfYvd4lLOI6cmBtPsRz00mANUIYjuufGju88rFZmKgbPLe5Ju7jbBEA04xCsdSsOLNruNEpqWOgk7pcuZKVlYUbnXsSrUfGI4QaLXzKOi0LpdX52RAkUdqyypuO9/YsgyrL6ytBHlHmC6GbI8PRAJFpXkJjhSTs9rmZHnFYW8xxEzykCMA1iopKGFAkd64WT0P3rz58pVpMaoKobHyUKW8ZlCs9qva1NmbtjJ39YmIvcAm1CxcrghkNaFCKFzLkHfSdjyVSTKx12wqhRqAwqnS7S21KM03fjfULipYZWH6nHlPazrbZM9cP4LOhbf0/iWDUn93k0MR3V6pnmV9yFZINZ4wZFuQmAIod9jNdY3YbmHt9PNjbBJnuWNVUTOcJoZkumLR7TtjVemHcsXuNuwzjLEtRHfvJe//nDqP/S+uQqy11TY40gFK2hUS3yalfsKIKTLUyTqXsyuA4oiNl+UQKzI5Dwx/uIFImUdgY3Ig+cgW6Je+em4Pg8tXvBndsycKsu+7bsD7Jb16e25v8/+dHOjB797H4PznwP4QlJyY6mBOAts4CDRXWVkyCK/ewPDba11fNS03Hsb66efUysensWaOIWYx+z2+Vp86qS1LRHM7cRp++j3+fvmduFRyLNV+8jE89OMHU48hMcdr9PufsVUCBbDTuXgGW7cua0v1BzMZY65A8lgnL0zTgtY426P26sz++3A41vj5FhCGBo3E6Kdfi2C+++p7PE/t9dX3N1MHJEr9UAqsPHpivLR/GDHUe/sj9M5+XFmYGvGjwFRFUaKQ6y8+i84nZxK4+wb014nXMLr5G8pqOfukJy1qY0knz/accHz/q6QauW8ut3H2FHrvXlSyFjLZTfOscV6t/3USZH148lVWWXtjuzbM3GW7ZqnUbYzKzaP2WzSgqaEWESiHCpYJCJmVgmUCmghq0YHGhmoC0FhQTQGqDdUkoFpQTQM6EKqJQJVQTQUqhWoykBeq6UAO1DIAMagWludKKvT/BRgAxGkswbHG4XYAAAAASUVORK5CYII="
@@ -60,23 +60,35 @@
                         <input type="radio" id="phoneAccount" name="acount"><label for="phoneAccount">手机验证码登陆</label>
                     </p>
                     <!-- 用户名 -->
-                    <p class="username"><input type="text">
-                        <em></em></p>
+                    <div class="usernamebox">
+                        <p class="username"><input type="text">
+                            <em></em><i>√</i></p>
+                            <p class="Error">用户名错误</p>
+                    </div>
                         <!-- 密码 -->
-                    <p class="password"><input type="text">
-                        <em></em></p>
+                    <div class="psaawordbox">
+                        <p class="password"><input type="text">
+                            <em></em></p>
+                            <p class="Error">密码错误</p>
+                    </div>
                         <!-- 手机号 -->
-                    <p class="tel" style="display: none;"><input type="text">
-                        <em></em></p>
+                    <div class="telbox">
+                        <p class="tel" ><input type="text">
+                            <em></em><i>√</i></p>
+                            <p class="Error">手机号错误</p>
+                    </div>
                     <!-- 滑块 -->
                     <p class="movebox">请按住滑块，拖到最右侧<strong class="moveblock">&gt;&gt;
                         </strong>
                         <span></span></p>
+                        <p class="Error">请重新滑动</p>
                         <!-- 手机验证码 -->
-                        <div class="telCode" style="display: none;">
+                        <div class="telCode" >
                             <input type="text" name="" id="">
                             <button>获取动态密码</button>
+                            <p class="Error">手机验证码错误</p>
                         </div>
+                        
                         <!-- 登录按钮 -->
                     <p class="pwdlogin">
                         <button>登 录</button>

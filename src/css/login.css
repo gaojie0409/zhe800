@@ -64,6 +64,10 @@ body {
 .ct_right .login-notices img{
     cursor: pointer;
 }
+/* 显示隐藏二维码登录页面 */
+.ct_right .tbcbox{
+    /* display: none; */
+}
 /* 二维码登陆 */
 .ct_right .tbc-notices-t {
     font-size: 20px;
@@ -98,6 +102,10 @@ body {
     text-align: right;
     margin: 20px 20px 0 0;
 }
+/* 显示隐藏密码登录页面 */
+.ct_right .pwd{
+    display: none;
+}
 /* 折800账号密码登陆 */
 .ct_right form {
     margin-left: 20px;
@@ -106,29 +114,41 @@ body {
 .ct_right .password,
 .ct_right .tel {
     position: relative;
+    width: 224px;
 }
 .ct_right .username input {
-    width: 220px;
+    width: 152px;
     height: 30px;
-    margin: 20px 0;
-    text-indent: 34px;
-    /* display: none; */
+    margin: 20px 0 0 0;
+    padding: 0 34px;
 }
-.ct_right .username em {
+/* 表单错误提醒 */
+.ct_right .Error{
+    height: 20px;
+    color: red;
+    line-height: 20px;
+    padding: 5px 0;
+}
+.ct_right .username em,.ct_right .username i {
     display: block;
     width: 12px;
     height: 12px;
-    background: url(https://z5.tuanimg.com/v1/login/img/login_user.png);
     position: absolute;
     top: 32px;
+}
+.ct_right .username em{
+    background: url(https://z5.tuanimg.com/v1/login/img/login_user.png);
     left: 14px;
-    /* display: none; */
+}
+.ct_right .username i {
+    right:5px;
+    color: green;
+    font-size: 16px;
 }
 .ct_right .password input {
     width: 220px;
     height: 30px;
     text-indent: 34px;
-    /* display: none; */
 }
 .ct_right .password em {
     display: block;
@@ -138,24 +158,43 @@ body {
     position: absolute;
     top: 12px;
     left: 14px;
-    /* display: none; */
 }
+/* 显示隐藏用户名密码 输入框*/
+.usernamebox,.psaawordbox{
+    display: none;
+}
+/* 手机登录 */
 .ct_right .tel input {
     margin: 20px 0 0 0;
     width: 220px;
     height: 30px;
     text-indent: 34px;
 }
-.ct_right .tel em {
+.ct_right .tel i {
+    right:5px;
+    color: green;
+    font-size: 16px;
+}
+.ct_right .tel em,.ct_right .tel i {
     display: block;
     width: 12px;
     height: 12px;
-    background: url(https://z5.tuanimg.com/v1/login/img/login_user.png) 12px 0;
     position: absolute;
     top: 32px;
+}
+.ct_right .tel em{
+    background: url(https://z5.tuanimg.com/v1/login/img/login_user.png) 12px 0;
     left: 14px;
 }
-/* 手机登录 */
+.ct_right .tel i{
+    right:5px;
+    color: green;
+    font-size: 16px;
+}
+/* 显示隐藏手机号和验证码输入框 */
+.telbox,.telCode{
+    /* display: none; */
+}
 .ct_right .telCode {
     width: 230px;
 }
@@ -175,7 +214,6 @@ body {
     width: 228px;
     height: 30px;
     background: #e9e7e7;
-    margin: 20px 0;
     position: relative;
     line-height: 30px;
     text-indent: 50px;
@@ -206,7 +244,7 @@ body {
 /* 登陆按钮 */
 .ct_right .pwdlogin {
     position: relative;
-    margin-top: 40px;
+    margin-top: 15px;
 }
 .ct_right .pwdlogin button {
     cursor: pointer;
