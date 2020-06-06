@@ -1,0 +1,245 @@
+// 右侧工具栏二级样式
+@mixin rightsubtool() {
+    width: 100px;
+    height: 34px;
+    background: red;
+    color: white;
+    line-height: 34px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 34px;
+    opacity: 0;
+}
+html,body{
+    height: 100%;
+}
+//右侧工具栏
+.right-toolbar {
+    width: 34px;
+    height: 100%;
+    background: black; 
+}
+// 右侧工具栏上部分
+.right-toolbar-top {
+    padding-top: 20px;
+    // 购物车
+    .shopcar {
+        padding: 10px 0;
+        
+        em {
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin: 10px auto;
+            background: url(//status.tuanimg.com/statics/zhe/common/img/sidebar_cart.png) no-repeat;
+        }
+        p {
+            color: white;
+            margin: 0 auto;
+            width: 20px;
+            text-align: center;
+        }
+        i {
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin: 10px auto;
+            border-radius: 50%;
+            color: white;
+            background: red;
+            text-align: center;
+            line-height: 20px;
+        }
+        &:hover {
+            background: red;
+            i {
+                color: red;
+                background: white;
+            }
+        }
+    }
+    .order,
+    .coupon,
+    .collect,
+    .message {
+        width: 34px;
+        height: 34px;
+        position: relative;
+        
+    }
+    // 我的订单
+    .order {
+        background: url(//z5.tuanimg.com/v2/core/img/side_golds.png) no-repeat 6px -193px;
+        &:hover{
+            background-color: red;
+            .suborder{
+                opacity: 1;
+            }
+        }
+        .suborder {
+            @include rightsubtool();
+        }
+    }
+    // 优惠券
+    .coupon {
+        background: url(//z5.tuanimg.com/v2/core/img/quan_iconnew.png) no-repeat 7px 7px;
+        &:hover{
+            background-color: red;
+            .subcoupon{
+                opacity: 1;
+            }
+        }
+        .subcoupon {
+            @include rightsubtool();
+        }
+    }
+    // 收藏
+    .collect {
+        background: url(//z5.tuanimg.com/v2/core/img/myFavorites.png) no-repeat 7px 7px;
+        &:hover{
+            background-color: red;
+            .subcollect{
+                opacity: 1;
+            }
+        }
+        .subcollect {
+            @include rightsubtool();
+        }
+    }
+    // 卖家消息
+    .message {
+        background: url(//z5.tuanimg.com/v2/core/img/side_golds.png) no-repeat 4px -232px;
+        &:hover{
+            background-color: red;
+            .submessage{
+                opacity: 1;
+            }
+        }
+        .submessage {
+            @include rightsubtool();
+        }
+    }
+}
+// 右侧工具栏下部分
+.right-toolbar-bottom{
+    position: absolute;
+    bottom: 0;
+    background: black;
+    .icon,.rulo,.r-tbc,.question,.advice,.topbtn{
+        width: 34px;
+        height: 34px;
+        position: relative;
+    }
+    // 签到
+    .icon{
+        background: url(//z5.tuanimg.com/v2/core/img/sidePanel_checkin1N.gif) no-repeat;
+        &:hover{
+            background:red url(//z5.tuanimg.com/v2/core/img/side_golds.png) no-repeat 0 -47px;
+            .subicon{
+                opacity: 1;
+            }
+        }
+        .subicon {
+            @include rightsubtool();
+            font-size: 12px;
+            line-height: 16px;
+        }
+    }
+    // 角色选择
+    .rulo{
+        background: url(//z5.tuanimg.com/v2/core/img/sidePanelIconsNew.png) no-repeat -386px 0;
+        &:hover{
+            background-color: red;
+            .subrulo{
+                opacity: 1;
+            }
+        }
+        .subrulo {
+            @include rightsubtool();
+            width: 165px;
+            p{
+                padding-left: 20px;
+            }
+            em,i,b{
+                display: block;
+                height: 20px;
+                border:1px solid white;
+                border-radius: 5px;
+                float: left;
+                line-height: 20px;
+                padding: 0 5px;
+                margin: 5px 2px;
+            }
+            strong{
+                display: block;
+                height: 20px;
+                border-radius: 5px;
+                float: left;
+                line-height: 20px;
+                padding: 0 5px;
+                margin: 5px 2px;
+                background: white;
+                color: red;
+            };
+        }
+    }
+    // 二维码
+    .r-tbc{
+        background: url(//z5.tuanimg.com/v2/core/img/sidePanelIconsNew.png) no-repeat -267px 0;
+        &:hover{
+            background-color: red;
+            .sub-r-tbc{
+                opacity: 1;
+            }
+        }
+        .sub-r-tbc {
+            width: 105px;
+            height: 150px;
+            position: absolute;
+            top: -15px;
+            right: 34px;
+            background: url(//status.tuanimg.com/statics/zhe/components/sidebar/img/side_two_dimension.png) no-repeat 0 0;
+            opacity: 0;
+        }
+    }
+    // 问题
+    .question{
+        background: url(//z5.tuanimg.com/v2/core/img/sidePanelIconsNew.png) no-repeat -330px 0;
+        &:hover{
+            background-color: red;
+            .subquestion{
+                opacity: 1;
+            }
+        }
+        .subquestion {
+            @include rightsubtool();
+        }
+    }
+    // 意见
+    .advice{
+        background: url(//z5.tuanimg.com/v2/core/img/sidePanelIconsNew.png) no-repeat -501px 0;
+        &:hover{
+            background-color: red;
+            .subadvice{
+                opacity: 1;
+            }
+        }
+        .subadvice {
+            @include rightsubtool();
+        }
+    }
+    // 回顶部按钮
+    .topbtn{
+        background: url(//z5.tuanimg.com/v2/core/img/sidePanelIconsNew.png) no-repeat -554px 0;
+        &:hover{
+            background-color: red;
+            .subtopbtn{
+                opacity: 1;
+            }
+        }
+        .subtopbtn {
+            @include rightsubtool();
+        }
+    }
+}

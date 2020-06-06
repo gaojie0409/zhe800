@@ -1,0 +1,98 @@
+@mixin wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+// 底部
+.footer {
+    width: 100%;
+    border-top: 3px solid red;
+    .footcontent {
+        @include wrapper();
+    }
+}
+// 底部上部分
+.foottop {
+    display: flex;
+    justify-content: space-between;
+    .items {
+        padding-top: 30px;
+        em {
+            width: 80px;
+            height: 80px;
+            display: block;
+        }
+        h4 {
+            font-weight: 900;
+            text-align: center;
+            line-height: 30px;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        p {
+            text-align: center;
+            line-height: 25px;
+            a:hover{
+                color: red;
+            }
+        }
+    }
+    .item1 {
+        em {
+            background: url(//status.tuanimg.com/statics/zhe/common/img/foot_icon.png) no-repeat;
+        }
+    }
+    .item2 {
+        em {
+            background: url(//status.tuanimg.com/statics/zhe/common/img/foot_icon.png) no-repeat -95px 0;
+        }
+    }
+    .item3 {
+        em {
+            background: url(//status.tuanimg.com/statics/zhe/common/img/foot_icon.png) no-repeat -190px 0;
+        }
+    }
+    .item4 {
+        em {
+            background: url(//status.tuanimg.com/statics/zhe/common/img/foot_icon.png) no-repeat 0 -95px;
+        }
+    }
+    .item5 {
+        em {
+            background: url(//status.tuanimg.com/statics/zhe/common/img/foot_icon.png) no-repeat -95px -95px;
+        }
+    }
+    .item6 {
+        strong {
+            display: block;
+            width: 104px;
+            height: 220px;
+            background: url(//status.tuanimg.com/statics/zhe/common/img/footer_code.png) 0 0 no-repeat;
+        }
+        h3 {
+            font-size: 14px;
+            text-indent: -7px;
+        }
+    }
+}
+// 底部下部分
+.footbottom {
+    width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 30px;
+    margin-top: 50px;
+    a {
+        display: inline-block;
+        width: 70px;
+        height: 26px;
+        &:nth-child(1) {
+            background: url(../img/shouye_new_img.png) -886px -626px;
+        }
+        &:nth-child(2) {
+            background: url(../img/shouye_new_img.png) -886px -660px;
+        }
+        &:nth-child(3) {
+            background: url(../img/shouye_new_img.png) -886px -699px;
+        }
+    }
+}

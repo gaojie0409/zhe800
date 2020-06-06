@@ -1,0 +1,281 @@
+//左侧悬浮菜单
+.left-menu {
+    position: absolute;
+    top: 4px;
+    left:4px;
+    width: 145px;
+    background: white;
+    // border: 1px solid red;
+    box-shadow: 2px 0 2px 2px #ccc;
+    h3 {
+        width: 120px;
+        height: 25px;
+        background: rgb(231, 106, 133);
+        color: white;
+        margin: 10px auto;
+        text-align: center;
+        line-height: 25px;
+        cursor: pointer;
+    }
+}
+//左侧悬浮上小导航
+.top-nav {
+    margin: 0 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    h4 {
+        line-height: 30px;
+        text-align: center;
+        a {
+            margin: 0 4px;
+            position: relative;
+            &:hover {
+                color: red;
+            }
+            i {
+                display: block;
+                width: 19px;
+                height: 9px;
+                background: url(//z5.tuanimg.com/v2/core/img/shouye_new_img.png) -379px -35px no-repeat;
+                position: absolute;
+                top: -10px;
+                left: 5px;
+            }
+        }
+    }
+}
+// 左侧悬浮中间导航
+.mid-nav {
+    ul {
+        width: 145px;
+        // display: flex;
+        // justify-content: space-around;
+        // flex-wrap: wrap;
+        li {
+            width: 58px;
+            margin: 5px 0 5px 13px;
+            float: left;
+            &:hover {
+                a {
+                    color: red;
+                }
+            }
+            i {
+                display: inline-block;
+                // margin-right: 2px;
+                height: 20px;
+                width: 20px;
+                background: url(//z5.tuanimg.com/v2/core/img/shouye_new_img.png) no-repeat;
+                vertical-align: middle;
+            }
+            &:nth-child(1) {
+                i {
+                    background-position: -576px -48px;
+                }
+            }
+            &:nth-child(2) {
+                i {
+                    background-position: -639px -48px;
+                }
+            }
+            &:nth-child(3) {
+                i {
+                    background-position: -576px -77px;
+                }
+            }
+            &:nth-child(4) {
+                i {
+                    background-position: -639px -77px;
+                }
+            }
+            &:nth-child(5) {
+                i {
+                    background-position: -576px -105px;
+                }
+            }
+            &:nth-child(6) {
+                i {
+                    background-position: -639px -105px;
+                }
+            }
+            &:nth-child(7) {
+                i {
+                    background-position: -576px -133px;
+                }
+            }
+            &:nth-child(8) {
+                i {
+                    background-position: -639px -133px;
+                }
+            }
+            &:nth-child(9) {
+                i {
+                    background-position: -576px -160px;
+                }
+            }
+            &:nth-child(10) {
+                i {
+                    background-position: -639px -160px;
+                }
+            }
+            &:nth-child(11) {
+                i {
+                    background-position: -576px -189px;
+                }
+            }
+            &:nth-child(12) {
+                i {
+                    background-position: -639px -189px;
+                }
+            }
+            &:nth-child(13) {
+                i {
+                    background-position: -576px -216px;
+                }
+            }
+            &:nth-child(14) {
+                i {
+                    background-position: -639px -216px;
+                }
+            }
+            &:nth-child(15) {
+                i {
+                    background-position: -576px -244px;
+                }
+            }
+            &:nth-child(16) {
+                i {
+                    background-position: -639px -244px;
+                }
+            }
+            &:nth-child(1):hover {
+                i {
+                    background-position: -700px -5px;
+                }
+            }
+            &:nth-child(2):hover {
+                i {
+                    background-position: -763px -5px;
+                }
+            }
+            &:nth-child(3):hover {
+                i {
+                    background-position: -700px -34px;
+                }
+            }
+            &:nth-child(4):hover {
+                i {
+                    background-position: -763px -34px;
+                }
+            }
+            &:nth-child(5):hover {
+                i {
+                    background-position: -700px -62px;
+                }
+            }
+            &:nth-child(6):hover {
+                i {
+                    background-position: -763px -62px;
+                }
+            }
+            &:nth-child(7):hover {
+                i {
+                    background-position: -700px -90px;
+                }
+            }
+            &:nth-child(8):hover {
+                i {
+                    background-position: -763px -90px;
+                }
+            }
+            &:nth-child(9):hover {
+                i {
+                    background-position: -700px -117px;
+                }
+            }
+            &:nth-child(10):hover {
+                i {
+                    background-position: -763px -117px;
+                }
+            }
+            &:nth-child(11):hover {
+                i {
+                    background-position: -700px -146px;
+                }
+            }
+            &:nth-child(12):hover {
+                i {
+                    background-position: -763px -146px;
+                }
+            }
+            &:nth-child(13):hover {
+                i {
+                    background-position: -700px -173px;
+                }
+            }
+            &:nth-child(14):hover {
+                i {
+                    background-position: -763px -173px;
+                }
+            }
+            &:nth-child(15):hover {
+                i {
+                    background-position: -700px -201px;
+                }
+            }
+            &:nth-child(16):hover {
+                i {
+                    background-position: -763px -201px;
+                }
+            }
+        }
+    }
+}
+//左侧悬浮导航小搜索框
+.s-search {
+    border-bottom: 1px solid #ccc;
+    form {
+        width: 100px;
+        margin: 0 auto;
+        position: relative;
+        .searchcontent {
+            float: left;
+            border: 0;
+            border: 1px solid #ccc;
+            margin: 10px auto;
+            width: 100px;
+            height: 30px;
+            outline: 0;
+            padding-right: 35px;
+            box-sizing: border-box;
+        }
+        .search-btn {
+            position: absolute;
+            top: 6px;
+            right: 3px;
+            width: 25px;
+            height: 27px;
+            margin-top: 6px;
+            padding: 3px;
+            border: 0;
+            border-left: 1px solid #ccc;
+            background-color: #fff;
+            outline: 0;
+
+            cursor: pointer;
+            background: url(//z5.tuanimg.com/v2/core/img/shouye_new_img.png) no-repeat #fff -313px -201px;
+        }
+    }
+}
+// 悬浮底部
+.bottom-nav {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 10px;
+    a {
+        padding: 0 5px;
+        &:hover {
+            color: red;
+        }
+    }
+}

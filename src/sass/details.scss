@@ -1,0 +1,67 @@
+@mixin wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+body{
+    background: white;
+}
+// 头部
+header {
+    font-size: 0;
+    iframe {
+        width: 100%;
+        height: 259.14px;
+    }
+}
+// 底部
+footer {
+    font-size: 0;
+    iframe {
+        width: 100%;
+        height: 433.67px;
+    }
+}
+// 右侧固定工具栏
+.right_toolbar {
+    position: fixed;
+    right:0;
+    top: 0;
+    height: 100%;
+    iframe {
+        width: 34px;
+        height: 100%;
+    }
+}
+// 主体
+article{
+    width: 100%;
+    border-top: 1px solid #ccc;
+}
+// 购物属性选择
+.goods-top{
+    @include wrapper();
+    padding: 10px 0;
+    // 导航目录
+    .nav-list{
+        em{
+            color: #999999;
+            padding: 0 5px;
+        }
+        span{
+            color: #999999;
+            &:hover{
+                color:red;
+            }
+        }
+        .title{
+            display: inline-block;
+            vertical-align: top;
+            color: #999999;
+            width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}
+// 

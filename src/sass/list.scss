@@ -1,0 +1,282 @@
+@mixin wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+//阴影效果
+@mixin shadow {
+    &:hover {
+        box-shadow: 5px 0px 10px lightgray, -5px 0px 10px lightgray;
+    }
+}
+body {
+    background: #f5f5f5;
+}
+// 头部
+header {
+    font-size: 0;
+    iframe {
+        width: 100%;
+        height: 259.14px;
+    }
+}
+// 底部
+footer {
+    font-size: 0;
+    iframe {
+        width: 100%;
+        height: 433.67px;
+    }
+}
+// 左侧悬浮菜单
+.left_menu {
+    position: fixed;
+    left: 70px;
+    top: 50%;
+    transform: translate(0, -50%);
+    iframe {
+        width: 153px;
+        height: 580px;
+    }
+}
+// 右侧固定工具栏
+.right_toolbar {
+    position: fixed;
+    right:0;
+    top: 0;
+    height: 100%;
+    iframe {
+        width: 34px;
+        height: 100%;
+    }
+}
+// 主体部分
+// 分类
+.classify {
+    @include wrapper();
+    padding: 15px 0;
+    .current-class {
+        float: left;
+    }
+    .right-class {
+        ul {
+            float: right;
+            li {
+                float: left;
+                padding: 0 5px;
+                &:hover{
+                    a{
+                        color:red;
+                    }
+                }
+            }
+            i {
+                float: left;
+            }
+        }
+    }
+}
+// 列表具体分类
+.sub-class {
+    @include wrapper();
+    background: white;
+    a {
+        display: inline-block;
+        padding: 10px;
+        &.active{
+            color: red;
+            font-weight: 900;;
+        }
+        &:hover{
+            color: red;
+        }
+    }
+}
+//列表
+.list {
+    @include wrapper();
+    background: white;
+    .list-top {
+        margin: 20px 0;
+    }
+}
+//列表排序
+.list-top-left {
+    float: left;
+    span {
+        display: inline-block;
+        height: 45px;
+        width: 55px;
+        line-height: 45px;
+        text-align: center;
+        position: relative;
+        cursor: pointer;
+        border-right: 1px solid #f2f2f2;
+        &:hover {
+            color: red;
+            .up {
+                border-bottom-color: red;
+            }
+        }
+        &.active {
+            background: red;
+            color: white;
+        }
+    }
+    em {
+        display: inline-block;
+        height: 45px;
+        padding: 0 5px;
+        line-height: 45px;
+        text-align: center;
+        cursor: pointer;
+        &:hover {
+            color: red;
+            i {
+                background-position: -19px 0;
+            }
+        }
+    }
+    .up {
+        display: block;
+        border: 4px solid transparent;
+        border-bottom-color: #ccc;
+        position: absolute;
+        top: 13px;
+        right: 5px;
+    }
+    .down {
+        display: block;
+        border: 4px solid transparent;
+        border-top-color: #ccc;
+        position: absolute;
+        top: 22px;
+        right: 5px;
+    }
+    i {
+        display: inline-block;
+        position: relative;
+        top: 1px;
+        width: 12px;
+        height: 12px;
+        margin-right: 5px;
+        background: url(//z5.tuanimg.com/v2/ju/img/sort_radio_box1.png) no-repeat -4px 0;
+    }
+}
+.list-top-right {
+    float: right;
+    cursor: pointer;
+    &:hover {
+        color: red;
+    }
+    span {
+        font-weight: 900;
+        line-height: 45px;
+    }
+}
+// 商品列表
+.new-banner {
+    @include wrapper();
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .items {
+        transition: box-shadow 1s;
+        background: white;
+        margin-bottom: 26px;
+        margin-top: 2px;
+        .imgbox {
+            height: 283px;
+            overflow: hidden;
+            position: relative;
+            img {
+                width: 283px;
+            }
+            .sub-title {
+                display: none;
+                height: 20px;
+                width: 283px;
+                text-align: center;
+                color: white;
+                background: rgba(51, 51, 49, 0.5);
+                position: absolute;
+                bottom: 0px;
+                transition: bottom 0.3s;
+            }
+        }
+        &:hover {
+            @include shadow();
+            .sub-title,
+            .collect {
+                display: block;
+            }
+            margin-bottom: 0;
+        }
+    }
+}
+// 商品价格
+.price {
+    color: red;
+    margin-left: 5px;
+    line-height: 20px;
+    i {
+        font-size: 25px;
+        color: red;
+    }
+    del {
+        margin-left: 5px;
+        color: #999999;
+    }
+    strong {
+        float: right;
+        color: #999999;
+        margin-right: 5px;
+    }
+}
+// 商品收藏
+.collect {
+    border-top: 1px dotted #999999;
+    display: none;
+    strong {
+        display: block;
+        cursor: pointer;
+        float: right;
+        height: 25px;
+        line-height: 25px;
+        em {
+            padding: 0 3px;
+            i {
+                display: inline-block;
+                position: relative;
+                top: 2px;
+                width: 14px;
+                height: 14px;
+                background: url(//z6.tuanimg.com/v3/src/img/common/big_bg_img_v3.png) no-repeat -493px -64px;
+            }
+            vertical-align: top;
+
+            &:hover {
+                color: red;
+                i {
+                    background: url(https://z5.tuanimg.com/v2/core/img/favorite_icon.png) no-repeat 0 -3px;
+                }
+            }
+        }
+        b {
+            padding: 0 3px;
+            &:hover {
+                color: red;
+            }
+        }
+    }
+}
+// 商品标题
+.title {
+    width: 273px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 5px 0 10px 5px;
+    &:hover{
+        text-decoration: underline;
+    }
+}

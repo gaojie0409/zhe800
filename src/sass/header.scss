@@ -1,0 +1,305 @@
+@charset"utf-8";
+$bgcolor-d: #fafafa;
+@mixin wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+body {
+    background: white;
+}
+
+// 顶部悬浮导航
+.topnav {
+    position: fixed;
+    top: 0;
+    background: white;
+    z-index: 999;
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 1px 2px 0px lightgrey;
+    .topnav-t {
+        width: 100%;
+        height: 40px;
+        border-bottom: 2px solid red;
+        .topnav-tbox {
+            @include wrapper();
+        }
+    }
+    .topnav-b {
+        @include wrapper();
+        ul {
+            li {
+                float: left;
+                padding: 0 10px;
+                margin-top: 10px;
+                &:hover{
+                    a{
+                        color: red;
+                    }
+                }
+                a {
+                    color: #666666;
+                    font-size: 14px;
+                }
+                &.active{
+                    a{
+                        font-weight: 900;
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+}
+//悬浮导航上半部分左导航
+.topnav-t-l {
+    float: left;
+    ul {
+        li {
+            float: left;
+            padding: 0 10px;
+            margin-top: 10px;
+            &:hover{
+                a{
+                    color: red;
+                }
+            }
+            &.active{
+                a{
+                    font-weight: 900;
+                    color: red;
+                }
+            }
+            a {
+                color: #666666;
+                font-size: 14px;
+            }
+        }
+    }
+}
+//悬浮导航上半部分右搜索
+.topnav-t-r {
+    float: right;
+    form {
+        font-size: 0;
+        margin-top: 5px;
+        input {
+            border: 1px solid rgb(230, 0, 68);
+            width: 120px;
+            height: 25px;
+        }
+        button {
+            margin-left: -1px;
+            border: 0;
+            width: 82px;
+            height: 29px;
+            background: url(../img/index-common.png) no-repeat -189px 0;
+            vertical-align: bottom;
+            cursor: pointer;
+        }
+    }
+}
+// 顶部工具栏  上外边距做完js记得删除
+.top-toolbarbox {
+    margin-top: 80px;
+    width: 100%;
+    height: 30px;
+    background: $bgcolor-d;
+    .top-toolbar {
+        @include wrapper();
+        padding-top: 9px;
+        a:hover{
+            span{
+                color: red;
+            }
+        }
+        span {
+            float: right;
+            display: block;
+            padding: 0 15px;
+            color: #999999;
+            border-right: 1px solid #ccc;
+            line-height: 14px;
+        }
+    }
+}
+//顶部工具栏手机
+.top-toolbar-tel {
+    position: relative;
+   
+    em {
+        display: inline-block;
+        width: 12px;
+        height: 16px;
+        background: url(../img/index-common.png) no-repeat;
+        vertical-align: middle;
+        margin-right: 3px;
+    }
+    .tbc {
+        width: 130px;
+        height: 130px;
+        background: white url("https://status.tuanimg.com/statics/zhe/components/toolbar/img/big_bg_img_v3.png")
+            no-repeat 5px 5px;
+        position: absolute;
+        top: 15px;
+        left: -25px;
+        box-shadow: 0 1px 2px 2px lightgray;
+        display: none;
+        z-index: 20;
+    }
+    &:hover{
+        background: white;
+        .tbc{
+            display: block;
+        }
+    }
+}
+//顶部工具栏购物车
+.top-toolbar-shopcar {
+    em {
+        img {
+            display: inline-block;
+            vertical-align: bottom;
+            margin-right: 3px;
+        }
+    }
+    b {
+        color: red;
+    }
+}
+// 头部
+.header {
+    width: 100%;
+    .headerbox {
+        @include wrapper();
+        .logo {
+            float: left;
+            margin-top: 20px;
+            img {
+                width: 200px;
+            }
+        }
+        .head-right {
+            float: right;
+            img {
+                width: 350px;
+                margin-top: 25px;
+            }
+        }
+    }
+}
+//头部搜索框
+.head-search {
+    border: 2px solid #e60044;
+    border-right: 0;
+    float: left;
+    margin: 27px 0 0 40px;
+    border-radius: 3px 0 0 3px;
+    width: 550px;
+    // background: blue;
+    position: relative;
+    div {
+        float: left;
+        width: 112px;
+        height: 35px;
+        background: url(//status.tuanimg.com/statics/zhe/common/img/index-common.png) -34px -34px no-repeat;
+        color: white;
+        font-size: 20px;
+        line-height: 35px;
+        text-indent: 30px;
+    }
+    form {
+        .searchcontent {
+            float: left;
+            border: 0;
+            border-right: 1px solid #ccc;
+            margin-top: 10px;
+            width: 385px;
+            outline: 0;
+        }
+        .search-btn {
+            float: left;
+            width: 48px;
+            height: 24px;
+            margin-top: 7px;
+            background-color: #fff;
+            outline: 0;
+            border: 0;
+            cursor: pointer;
+            background: url(//status.tuanimg.com/statics/zhe/common/img/index-common.png) -34px 0 no-repeat;
+        }
+        div {
+            position: absolute;
+            right: -15px;
+            top: -2px;
+            width: 15px;
+            height: 39px;
+            background: url(//status.tuanimg.com/statics/zhe/common/img/index-common.png) 0 -34px no-repeat;
+        }
+    }
+}
+//头部导航
+.head-nav {
+    width: 100%;
+    margin-top: 40px;
+}
+.head-navbox {
+    @include wrapper();
+    li {
+        box-sizing: border-box;
+        cursor: pointer;
+        float: left;
+        text-align: center;
+        height: 40px;
+        line-height: 40px;
+        a {
+            display: block;
+            color: #696969;
+            font-size: 16px;
+            width: 130px;
+            height: 40px;
+        }
+        &:first-child {
+            a {
+                width: 150px;
+            }
+        }
+        &:hover {
+            box-shadow: 5px 0 10px #ddd, -5px 0 10px #ddd;
+            border-bottom: 2px solid #ec1611;
+            a {
+                color: red;
+            }
+        }
+        &.active{
+            background: rgb(230, 0, 68);
+            a{
+                color: white;
+            }
+        }
+        
+        &:last-child {
+            background: url(https://z3.tuanimg.com/imagev2/site/252x68.d881736ade47ab426df86e928a1a2fa1.gif) no-repeat top left/140px;
+            position: relative;
+            a {
+                width: 140px;
+            }
+            img {
+                display: none;
+            }
+            &:hover {
+                box-shadow: none;
+                border-bottom: 0;
+                img {
+                    display: block;
+                    position: absolute;
+                    top: 40px;
+                    right: 0;
+                    z-index: 20;
+                }
+            }
+        }
+    }
+}
