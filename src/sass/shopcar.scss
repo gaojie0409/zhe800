@@ -1,0 +1,233 @@
+@mixin wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+body {
+    background: white;
+}
+// 头部
+header {
+    font-size: 0;
+    iframe {
+        width: 100%;
+        height: 259.14px;
+    }
+}
+// 底部
+footer {
+    font-size: 0;
+    iframe {
+        width: 100%;
+        height: 433.67px;
+    }
+}
+// 主体
+article{
+    border-top: 2px solid red;
+}
+// 购物车列表
+ .goods-list{
+     @include wrapper();
+ }
+//  列表头部
+.list-top{
+    font-weight: 900;
+    margin:15px 0;
+    input{
+        vertical-align: top;
+    }
+    label{
+        margin-right: 150px;
+    }
+    .title{
+        margin-right: 300px;
+    }
+    .s-price{
+        margin-right: 150px;
+    }
+    .number{
+        margin-right: 150px;
+    }
+    .t-price{
+        margin-right: 120px;
+    }
+}
+// 列表项
+.itembox{   
+    background: #fbfbfb;
+}
+.items{
+    border: 1px solid #ccc;
+    padding:20px 0 20px 30px;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: -1px;
+    &:hover{
+        .attr{
+            border: 1px dashed orange;
+            .reset{
+                display: block;
+            }
+        }
+    }
+    input{
+        vertical-align: top;
+        margin: 0 15px 0 0; 
+    }
+    img{
+        width: 70px;
+        margin-right: 15px;
+    }
+    // 标题
+    .title{
+        width: 150px;
+        margin-right: 60px;
+        P:hover{
+            color: red;
+            text-decoration: underline;
+        }
+        i{
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 2px;
+            color: white;
+            background: purple;
+            font-size: 14px;
+            text-align: center;
+            line-height: 15px;
+            margin-right: 5px;
+        }
+        em{
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 2px;
+            color: white;
+            background: red;
+            text-align: center;
+            line-height: 15px;
+        }
+    }
+    // 尺码
+    .attr{
+        border: 1px solid #fbfbfb;
+        box-sizing: border-box;
+        padding: 2px 0 0 4px;
+        width: 160px;
+        margin-right: 15px;
+        position: relative;
+        .reset{
+            display: block;
+            height: 14px;
+            width: 32px;
+            background: orange;
+            color: white;
+            position: absolute;
+            top: 0;
+            right: 0;
+            text-align: center;
+            line-height: 14px;
+            display: none;
+            cursor: pointer;
+        }
+    }
+    // 单价
+    .s-price{
+        margin-right: 140px;
+        del{
+            color: #ccc;
+        }
+    }
+    // 数量
+    .number{
+        margin-right: 105px;
+        input {
+            height: 26px;
+            border:1px solid #ccc;
+            margin-right: -1px;
+            width: 50px;
+            text-align: center;
+            outline: 0;
+        }
+        i {
+            display: inline-block;
+            height: 28px;
+            background: white;
+            vertical-align: middle;
+            border: 1px solid #ccc;
+            line-height: 28px;
+            text-align: center;
+            margin-right: -3px;
+            cursor: pointer;
+            width: 28px;
+        }
+    }
+    // 总价
+    .t-price{
+        margin-right: 130px;
+        color: red;
+        font-weight: 900;
+        font-size: 16px;
+    }
+    // 操作
+    .set{
+        p{
+            cursor: pointer;
+            &:hover{
+                color:red;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+// 列表底部
+.list-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    margin: 25px 0;
+    padding-left:20px;
+    height: 50px;
+    // 列表底部左侧
+    .list-bottom-left{
+        input{
+            vertical-align: middle;
+            position: relative;
+            top: -1px;
+        }
+        label{
+            margin-right: 20px;
+        }
+        label:hover,.t-del:hover{
+            text-decoration: underline;
+            color: red;
+            cursor: pointer;
+        }
+    }
+    // 列表底部右侧
+    .list-bottom-right{
+        .t-num{
+            margin-right: 20px;
+            i{
+                color: red;
+                font-size: 14px;
+            }
+        }
+        .t-price{
+            em,i{
+                color: red;
+                font-size: 20px;
+                font-weight: 900;
+            }
+        }
+        button{
+            height: 50px;
+            width: 150px;
+            border: 0;
+            font-size: 20px;
+            color:#999999
+        }
+    }
+}

@@ -2,7 +2,7 @@
     width: 1200px;
     margin: 0 auto;
 }
-body{
+body {
     background: white;
 }
 // 头部
@@ -24,7 +24,7 @@ footer {
 // 右侧固定工具栏
 .right_toolbar {
     position: fixed;
-    right:0;
+    right: 0;
     top: 0;
     height: 100%;
     iframe {
@@ -33,27 +33,28 @@ footer {
     }
 }
 // 主体
-article{
+article {
     width: 100%;
     border-top: 1px solid #ccc;
 }
 // 购物属性选择
-.goods-top{
+.goods-top {
     @include wrapper();
     padding: 10px 0;
     // 导航目录
-    .nav-list{
-        em{
+    .nav-list {
+        margin-bottom: 10px;
+        em {
             color: #999999;
             padding: 0 5px;
         }
-        span{
+        span {
             color: #999999;
-            &:hover{
-                color:red;
+            &:hover {
+                color: red;
             }
         }
-        .title{
+        .title {
             display: inline-block;
             vertical-align: top;
             color: #999999;
@@ -63,5 +64,600 @@ article{
             text-overflow: ellipsis;
         }
     }
+    .goods-attr {
+        display: flex;
+        justify-content: space-between;
+    }
 }
-// 
+// 主图
+.main-pic-box {
+    width: 402px;
+    position: relative;
+    // 主图
+    .main-pic {
+        border: 1px solid #ccc;
+        position: relative;
+    }
+    // 小放大镜
+    .sf {
+        width: 100px;
+        height: 100px;
+        background: rgba($color: #f5e50b, $alpha: 0.3);
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    // 大放大镜
+    .bf {
+        width: 600px;
+        height: 600px;
+        border: 1px solid #ccc;
+        position: absolute;
+        top: 0;
+        left: 402px;
+        overflow: hidden;
+        visibility: hidden;
+    }
+}
+// 主图下面小图
+.small-pic {
+    width: 402px;
+    margin: 10px 0;
+    img {
+        width: 58px;
+        margin-right: 10.8px;
+        float: left;
+        box-sizing: border-box;
+        border: 1px solid white;
+        &:last-child {
+            margin-right: 0;
+        }
+        &:hover {
+            border-color: red;
+        }
+    }
+}
+//主图下收藏分享
+.main-pic-share {
+    position: relative;
+    em {
+        padding-right: 8px;
+
+        i {
+            display: inline-block;
+            position: relative;
+            top: 2px;
+            width: 14px;
+            height: 14px;
+        }
+        vertical-align: top;
+
+        &:hover {
+            color: red;
+        }
+    }
+    a {
+        // 收藏
+        &:first-child {
+            i {
+                background: url(//z6.tuanimg.com/v3/src/img/common/big_bg_img_v3.png) no-repeat -493px -64px;
+            }
+            &:hover {
+                i {
+                    background: url(https://z5.tuanimg.com/v2/core/img/favorite_icon.png) no-repeat 0 -3px;
+                }
+            }
+        }
+        // 举报
+        &:last-child {
+            i {
+                background: url(https://i4.tuanimg.com/shop/asset/item_d/p_Spirit1-3.95484520.png) no-repeat -64px -192px;
+            }
+            &:hover {
+                i {
+                    background: url(https://i4.tuanimg.com/shop/asset/item_d/p_Spirit1-3.95484520.png) no-repeat -80px -192px;
+                }
+            }
+        }
+    }
+    // 分享
+    .share {
+        display: inline-block;
+        position: relative;
+        i {
+            background: url(https://i4.tuanimg.com/shop/asset/item_d/p_Spirit1-3.95484520.png) no-repeat -32px -192px;
+        }
+        &:hover {
+            i {
+                background: url(https://i4.tuanimg.com/shop/asset/item_d/p_Spirit1-3.95484520.png) no-repeat -48px -192px;
+            }
+            .share-ways {
+                visibility: visible;
+            }
+        }
+    }
+    // 分享方式
+    .share-ways {
+        width: 80px;
+        height: 100px;
+        position: absolute;
+        top: 16px;
+        left: 0px;
+        border: 1px solid #ccc;
+        padding: 5px 0;
+        background: white;
+        visibility: hidden;
+        p {
+            margin: 6px;
+        }
+        strong {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+        }
+        p:hover {
+            color: red;
+        }
+        .sinawb {
+            strong {
+                background: url(//i4.tuanimg.com/shop/asset/item_d/p_Spirit1-3.95484520.png) no-repeat -60px -207px;
+            }
+        }
+        .tcentwb {
+            strong {
+                background: url(//i4.tuanimg.com/shop/asset/item_d/p_Spirit1-3.95484520.png) no-repeat -80px -207px;
+            }
+        }
+        .renren {
+            strong {
+                background: url(//i4.tuanimg.com/shop/asset/item_d/p_Spirit1-3.95484520.png) no-repeat -40px -207px;
+            }
+        }
+        .qzone {
+            strong {
+                background: url(//i4.tuanimg.com/shop/asset/item_d/p_Spirit1-3.95484520.png) no-repeat -20px -207px;
+            }
+        }
+    }
+}
+// 商品参数选择
+.goods-choose {
+    width: 549px;
+}
+// 标题
+.title {
+    margin-bottom: 20px;
+    p {
+        color: black;
+        font-weight: 900;
+        font-size: 16px;
+    }
+    span {
+        color: red;
+        line-height: 20px;
+    }
+}
+// 价格
+.pricebox {
+    padding-left: 10px;
+    background: #fff6eb;
+    .price {
+        i {
+            color: red;
+            font-weight: 900;
+        }
+        em {
+            font-size: 26px;
+            color: red;
+            font-weight: 900;
+        }
+        span {
+            margin-left: 15px;
+            position: relative;
+            strong {
+                width: 11px;
+                height: 16px;
+                background: url(//i4.tuanimg.com/shop/asset/item_d/p_Spirit1-3.95484520.png) no-repeat -89px -284px;
+                display: inline-block;
+                vertical-align: middle;
+                margin: -2px 4px 0 0;
+            }
+            b {
+                display: block;
+                width: 130px;
+                height: 30px;
+                background: white
+                    url(https://status.tuanimg.com/pay/weixin/rq?pay=https%3A%2F%2Fi0.tuanimg.com%2Fms%2Fzhe800hd%2Fapp%2Fdown_url%2Fdown_new.html%3Fgoto%3Dzhe800%253A%252F%252Fm.zhe800.com%252Fmid%252Fzdetail%253Fzid%253Dze200402150004847624%2526dealid%253D94727584%2526source_type%253D1%2526goods_type%253D1%2526title%253D%2526static_key_id%253D%2526item_attribute_id%253D)
+                    no-repeat top left/100%;
+                position: absolute;
+                top: 15px;
+                left: 0;
+                padding: 140px 5px 5px;
+                text-align: center;
+                visibility: hidden;
+                border: 1px solid #ccc;
+                z-index: 20;
+            }
+            &:hover {
+                b {
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}
+// 积分
+.points {
+    margin: 5px 0;
+    padding-left: 10px;
+    position: relative;
+    em {
+        display: inline-block;
+        height: 15px;
+        width: 24px;
+        padding: 0 8px;
+        background: orange;
+        color: white;
+        line-height: 15px;
+        border-radius: 3px;
+        text-align: center;
+        margin-right: 10px;
+    }
+    // 返积分
+    div {
+        display: inline-block;
+        b {
+            position: absolute;
+            top: 15px;
+            left: 54px;
+            display: block;
+            width: 120px;
+            border: 1px solid #ccc;
+            background: white;
+            display: none;
+            p {
+                padding: 4px;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        &:hover {
+            text-decoration: underline;
+            b {
+                display: block;
+                z-index: 20;
+            }
+        }
+    }
+    // 积分抵金额
+    i {
+        margin-left: 10px;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+// 优惠
+.coupon {
+    
+    margin: 5px 0;
+    padding: 0 0 20px 10px;
+    position: relative;
+    &:hover {
+        div span{
+            text-decoration: underline;
+        }
+        p {
+            display: block;
+        }
+    }
+    em {
+        display: inline-block;
+        height: 15px;
+        width: 24px;
+        padding: 0 8px;
+        background: palevioletred;
+        color: white;
+        line-height: 15px;
+        border-radius: 3px;
+        text-align: center;
+        margin-right: 10px;
+    }
+
+    // 优惠
+    div {
+        display: inline-block;
+        span {
+            color: palevioletred;
+        }
+        // 优惠下拉框
+        p {
+            color: palevioletred;
+            position: absolute;
+            left: -10px;
+            padding: 10px 0;
+            background: #fff6eb;
+            width: 549px;
+            display: none;
+            text-indent: 20px;
+            a {
+                color: palevioletred;
+                margin-left: 30px;
+            }
+        }
+    }
+    // 更多优惠
+    .more-coupon {
+        float: right;
+        margin-right: 30px;
+        color: palevioletred;
+    }
+}
+// 灰色标签样式
+.greylabel {
+    display: inline-block;
+    width: 46px;
+    height: 18px;
+    line-height: 18px;
+    color: #fff;
+    text-align: center;
+    padding-right: 3px;
+    background: url(//i4.tuanimg.com/shop/asset/item_d/products/new1.ccb9914b.png) no-repeat 0 0;
+    margin: 3px 8px 0 20px;
+}
+// 快递
+.exp {
+    margin: 5px 0;
+    position: relative;
+    // 运费
+    .expmoney {
+        margin: 15px 0;
+        b {
+            margin-right: 20px;
+        }
+        strong {
+            cursor: pointer;
+            margin-right: 20px;
+        }
+    }
+    // 省份选择框
+    .prov {
+        width: 280px;
+        border: 1px solid #ccc;
+        position: absolute;
+        left: 30px;
+        top: 22px;
+        display: none;
+        li {
+            width: 40px;
+            float: left;
+            padding: 8px;
+            margin-right: 10px;
+            color: lightskyblue;
+            cursor: pointer;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        em {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+        }
+    }
+    // 服务
+    .expservice {
+        margin: 15px 0;
+        i {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border-radius: 3px;
+            line-height: 16px;
+            text-align: center;
+            background: red;
+            color: white;
+            margin-right: 5px;
+        }
+        b {
+            display: block;
+            margin: 10px 0 10px 80px;
+        }
+    }
+}
+// 商品参数选择
+.goods-attr-choose {
+    // 颜色
+    .color {
+        margin: 15px 0;
+        i {
+            display: inline-block;
+            width: 31px;
+            height: 31px;
+            border: 1px solid white;
+            background: url(https://z2.tuanimg.com/imagev2/trade/800x800.dc1c842e4c5df9c7c7743c07ead93268.400x.jpg)
+                no-repeat top left/100%;
+            vertical-align: top;
+            &.active {
+                border-color: red;
+            }
+        }
+    }
+    // 尺码
+    .size {
+        margin: 15px 0;
+        i {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: white;
+            vertical-align: middle;
+            border: 1px solid #ccc;
+            line-height: 24px;
+            text-align: center;
+            cursor: pointer;
+            margin-right: 5px;
+            &:hover {
+                color: red;
+            }
+        }
+    }
+    // 数量
+    .number {
+        margin: 15px 0;
+        i,
+        strong {
+            display: inline-block;
+            height: 28px;
+            background: white;
+            vertical-align: middle;
+            border: 1px solid #ccc;
+            line-height: 28px;
+            text-align: center;
+        }
+        i {
+            margin-right: -2px;
+            cursor: pointer;
+            width: 28px;
+        }
+        strong {
+            margin-right: -1px;
+            width: 50px;
+        }
+        span {
+            margin-left: 20px;
+        }
+    }
+}
+// 购物按钮
+.buy-btn {
+    margin-left: 20px;
+    button {
+        width: 165px;
+        height: 55px;
+        box-sizing: border-box;
+        border: 0;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    .buynow {
+        border: 1px solid red;
+        color: red;
+        background: white;
+        margin-right: 10px;
+    }
+    .addToShopcar {
+        background: red;
+        color: white;
+    }
+}
+// 退货服务
+.return-service {
+    margin: 15px 0 0 20px;
+    // 7天无理由
+    .day7 {
+        margin-right: 15px;
+        i {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            text-align: center;
+            border-radius: 3px;
+            color: white;
+            background: red;
+        }
+    }
+    // 退运险
+    .insurance {
+        i {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: url(//i4.tuanimg.com/shop/asset/item_d/products/new_ico8.e0121a0d.png) no-repeat -133px -199px;
+            vertical-align: top;
+        }
+    }
+}
+// 店铺信息
+.shop-info {
+    width: 160px;
+    height: 470px;
+    border: 1px solid #ccc;
+    padding: 20px 10px 0;
+    // 店铺名
+    .shop-name {
+        border-bottom: 1px dotted #ccc;
+        padding-bottom: 10px;
+        span {
+            height: 34px;
+            line-height: 34px;
+            font-weight: 900;
+        }
+        i {
+            display: inline-block;
+            width: 27px;
+            height: 34px;
+            background: url(//i4.tuanimg.com/shop/asset/item_d/p_Spirit1-3.95484520.png) -1px -66px no-repeat;
+            float: right;
+        }
+    }
+    // 店铺资质
+    .shop-intel {
+        border-bottom: 1px dotted #ccc;
+        p {
+            margin: 20px 0;
+        }
+        a {
+            display: inline-block;
+            vertical-align: middle;
+            height: 24px;
+            margin: 0 5px;
+        }
+        p:first-child {
+            a {
+                width: 24px;
+                background: url(//i4.tuanimg.com/shop/asset/item_d/icon/icon_level_new2.ddb32b36.png) repeat-x 0 -72px;
+            }
+        }
+        p:last-child{
+            a:nth-child(1){
+                width: 20px;
+                background: url(//i4.tuanimg.com/shop/asset/item_d/products/new1.ccb9914b.png) no-repeat 0 -40px;
+            }
+            a:nth-child(2){
+                width: 20px;
+                background: url(//i4.tuanimg.com/shop/asset/item_d/products/new1.ccb9914b.png) no-repeat -20px -40px;
+            }
+            a:nth-child(3){
+                width: 20px;
+                background: url(//i4.tuanimg.com/shop/asset/item_d/products/new1.ccb9914b.png) no-repeat -40px -40px;
+            }
+        }
+    }
+    // 店铺评分
+    .shop-mark{
+        line-height: 40px;
+        margin: 20px 0;
+        i{
+            margin-left: 15px;
+            color: red;
+        }
+    }
+    // 店铺相关按钮
+    .shop-btn{
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-around;
+        button{
+            height: 30px;
+            width: 70px;
+                border: 1px solid red;
+                color:red;
+                background: white;
+        }
+    }
+}
