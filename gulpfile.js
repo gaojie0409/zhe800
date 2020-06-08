@@ -41,10 +41,10 @@ gulp.task('compilesass', () => {
 //压缩js
 gulp.task('uglifyjs', () => {
     return gulp.src('src/script/*.js')
-        .pipe(babel({
-            presets: ['es2015']
-        }))
-        .pipe(script())
+        // .pipe(babel({
+        //     presets: ['es2015']
+        // }))
+        // .pipe(script())
         .pipe(gulp.dest('dist/script'));
 });
 

@@ -7,6 +7,9 @@
     <title>商品列表</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/list.css">
+    <link rel="stylesheet" href="css/custom-pagination.min.css" />
+    <script type="text/javascript" src="script/custom-pagination.min.js"></script>
+    <script src="script/list.js" type="module"></script>
 </head>
 
 <body>
@@ -71,7 +74,7 @@
                 <div class="list-top-left">
                     <span class="active">综合</span>
                     <span>销量</span>
-                    <span>价格<b class="up"></b>
+                    <span id="pxprice">价格<b class="up"></b>
                         <b class="down"></b></span>
                     <span>最新</span>
                     <em><i></i>只看特卖商城</em>
@@ -82,7 +85,7 @@
         </div>
         <!-- 商品列表 -->
         <div class="new-banner clearfix">
-            <div class="items">
+            <!-- <div class="items">
                 <div class="imgbox">
                     <a href="javascript:;">
                         <img src="https://z8.tuanimg.com/imagev2/trade/800x800.9b38428d1b8bfd32af105775f9fd3e74.380x380.jpg"
@@ -93,142 +96,9 @@
                 <a href="javascript:;"><p class="title">【不起球 不掉色】利人鸟四季男士休闲裤男时尚休闲百搭透气裤子4</p></a>
                 <p class="price">￥<i>99</i><del>￥299</del><strong>剩余10天</strong></p>
                 <p class="collect clearfix"><strong><a href="javascript:;"><em><i></i>收藏</em></a><a href="javascript:;"><b>[详情]</b></a></strong></p>
-            </div>
-            <div class="items">
-                <div class="imgbox">
-                    <a href="javascript:;">
-                        <img src="https://z8.tuanimg.com/imagev2/trade/800x800.9b38428d1b8bfd32af105775f9fd3e74.380x380.jpg"
-                        alt="">
-                    </a>
-                    <a href="javascript:;"><p class="sub-title">找相似&gt;</p></a>
-                </div>
-                <a href="javascript:;"><p class="title">【不起球 不掉色】利人鸟四季男士休闲裤男时尚休闲百搭透气裤子4</p></a>
-                <p class="price">￥<i>99</i><del>￥299</del><strong>剩余10天</strong></p>
-                <p class="collect clearfix"><strong><a href="javascript:;"><em><i></i>收藏</em></a><a href="javascript:;"><b>[详情]</b></a></strong></p>
-            </div>
-            <div class="items">
-                <div class="imgbox">
-                    <a href="javascript:;">
-                        <img src="https://z8.tuanimg.com/imagev2/trade/800x800.9b38428d1b8bfd32af105775f9fd3e74.380x380.jpg"
-                        alt="">
-                    </a>
-                    <a href="javascript:;"><p class="sub-title">找相似&gt;</p></a>
-                </div>
-                <a href="javascript:;"><p class="title">【不起球 不掉色】利人鸟四季男士休闲裤男时尚休闲百搭透气裤子4</p></a>
-                <p class="price">￥<i>99</i><del>￥299</del><strong>剩余10天</strong></p>
-                <p class="collect clearfix"><strong><a href="javascript:;"><em><i></i>收藏</em></a><a href="javascript:;"><b>[详情]</b></a></strong></p>
-            </div>
-            <div class="items">
-                <div class="imgbox">
-                    <a href="javascript:;">
-                        <img src="https://z8.tuanimg.com/imagev2/trade/800x800.9b38428d1b8bfd32af105775f9fd3e74.380x380.jpg"
-                        alt="">
-                    </a>
-                    <a href="javascript:;"><p class="sub-title">找相似&gt;</p></a>
-                </div>
-                <a href="javascript:;"><p class="title">【不起球 不掉色】利人鸟四季男士休闲裤男时尚休闲百搭透气裤子4</p></a>
-                <p class="price">￥<i>99</i><del>￥299</del><strong>剩余10天</strong></p>
-                <p class="collect clearfix"><strong><a href="javascript:;"><em><i></i>收藏</em></a><a href="javascript:;"><b>[详情]</b></a></strong></p>
-            </div>
-            <div class="items">
-                <div class="imgbox">
-                    <a href="javascript:;">
-                        <img src="https://z8.tuanimg.com/imagev2/trade/800x800.9b38428d1b8bfd32af105775f9fd3e74.380x380.jpg"
-                        alt="">
-                    </a>
-                    <a href="javascript:;"><p class="sub-title">找相似&gt;</p></a>
-                </div>
-                <a href="javascript:;"><p class="title">【不起球 不掉色】利人鸟四季男士休闲裤男时尚休闲百搭透气裤子4</p></a>
-                <p class="price">￥<i>99</i><del>￥299</del><strong>剩余10天</strong></p>
-                <p class="collect clearfix"><strong><a href="javascript:;"><em><i></i>收藏</em></a><a href="javascript:;"><b>[详情]</b></a></strong></p>
-            </div>
-            <div class="items">
-                <div class="imgbox">
-                    <a href="javascript:;">
-                        <img src="https://z8.tuanimg.com/imagev2/trade/800x800.9b38428d1b8bfd32af105775f9fd3e74.380x380.jpg"
-                        alt="">
-                    </a>
-                    <a href="javascript:;"><p class="sub-title">找相似&gt;</p></a>
-                </div>
-                <a href="javascript:;"><p class="title">【不起球 不掉色】利人鸟四季男士休闲裤男时尚休闲百搭透气裤子4</p></a>
-                <p class="price">￥<i>99</i><del>￥299</del><strong>剩余10天</strong></p>
-                <p class="collect clearfix"><strong><a href="javascript:;"><em><i></i>收藏</em></a><a href="javascript:;"><b>[详情]</b></a></strong></p>
-            </div>
-            <div class="items">
-                <div class="imgbox">
-                    <a href="javascript:;">
-                        <img src="https://z8.tuanimg.com/imagev2/trade/800x800.9b38428d1b8bfd32af105775f9fd3e74.380x380.jpg"
-                        alt="">
-                    </a>
-                    <a href="javascript:;"><p class="sub-title">找相似&gt;</p></a>
-                </div>
-                <a href="javascript:;"><p class="title">【不起球 不掉色】利人鸟四季男士休闲裤男时尚休闲百搭透气裤子4</p></a>
-                <p class="price">￥<i>99</i><del>￥299</del><strong>剩余10天</strong></p>
-                <p class="collect clearfix"><strong><a href="javascript:;"><em><i></i>收藏</em></a><a href="javascript:;"><b>[详情]</b></a></strong></p>
-            </div>
-            <div class="items">
-                <div class="imgbox">
-                    <a href="javascript:;">
-                        <img src="https://z8.tuanimg.com/imagev2/trade/800x800.9b38428d1b8bfd32af105775f9fd3e74.380x380.jpg"
-                        alt="">
-                    </a>
-                    <a href="javascript:;"><p class="sub-title">找相似&gt;</p></a>
-                </div>
-                <a href="javascript:;"><p class="title">【不起球 不掉色】利人鸟四季男士休闲裤男时尚休闲百搭透气裤子4</p></a>
-                <p class="price">￥<i>99</i><del>￥299</del><strong>剩余10天</strong></p>
-                <p class="collect clearfix"><strong><a href="javascript:;"><em><i></i>收藏</em></a><a href="javascript:;"><b>[详情]</b></a></strong></p>
-            </div>
-            <div class="items">
-                <div class="imgbox">
-                    <a href="javascript:;">
-                        <img src="https://z8.tuanimg.com/imagev2/trade/800x800.9b38428d1b8bfd32af105775f9fd3e74.380x380.jpg"
-                        alt="">
-                    </a>
-                    <a href="javascript:;"><p class="sub-title">找相似&gt;</p></a>
-                </div>
-                <a href="javascript:;"><p class="title">【不起球 不掉色】利人鸟四季男士休闲裤男时尚休闲百搭透气裤子4</p></a>
-                <p class="price">￥<i>99</i><del>￥299</del><strong>剩余10天</strong></p>
-                <p class="collect clearfix"><strong><a href="javascript:;"><em><i></i>收藏</em></a><a href="javascript:;"><b>[详情]</b></a></strong></p>
-            </div>
-            <div class="items">
-                <div class="imgbox">
-                    <a href="javascript:;">
-                        <img src="https://z8.tuanimg.com/imagev2/trade/800x800.9b38428d1b8bfd32af105775f9fd3e74.380x380.jpg"
-                        alt="">
-                    </a>
-                    <a href="javascript:;"><p class="sub-title">找相似&gt;</p></a>
-                </div>
-                <a href="javascript:;"><p class="title">【不起球 不掉色】利人鸟四季男士休闲裤男时尚休闲百搭透气裤子4</p></a>
-                <p class="price">￥<i>99</i><del>￥299</del><strong>剩余10天</strong></p>
-                <p class="collect clearfix"><strong><a href="javascript:;"><em><i></i>收藏</em></a><a href="javascript:;"><b>[详情]</b></a></strong></p>
-            </div>
-            <div class="items">
-                <div class="imgbox">
-                    <a href="javascript:;">
-                        <img src="https://z8.tuanimg.com/imagev2/trade/800x800.9b38428d1b8bfd32af105775f9fd3e74.380x380.jpg"
-                        alt="">
-                    </a>
-                    <a href="javascript:;"><p class="sub-title">找相似&gt;</p></a>
-                </div>
-                <a href="javascript:;"><p class="title">【不起球 不掉色】利人鸟四季男士休闲裤男时尚休闲百搭透气裤子4</p></a>
-                <p class="price">￥<i>99</i><del>￥299</del><strong>剩余10天</strong></p>
-                <p class="collect clearfix"><strong><a href="javascript:;"><em><i></i>收藏</em></a><a href="javascript:;"><b>[详情]</b></a></strong></p>
-            </div>
-            <div class="items">
-                <div class="imgbox">
-                    <a href="javascript:;">
-                        <img src="https://z8.tuanimg.com/imagev2/trade/800x800.9b38428d1b8bfd32af105775f9fd3e74.380x380.jpg"
-                        alt="">
-                    </a>
-                    <a href="javascript:;"><p class="sub-title">找相似&gt;</p></a>
-                </div>
-                <a href="javascript:;"><p class="title">【不起球 不掉色】利人鸟四季男士休闲裤男时尚休闲百搭透气裤子4</p></a>
-                <p class="price">￥<i>99</i><del>￥299</del><strong>剩余10天</strong></p>
-                <p class="collect clearfix"><strong><a href="javascript:;"><em><i></i>收藏</em></a><a href="javascript:;"><b>[详情]</b></a></strong></p>
-            </div>
-            
+            </div> -->
         </div>
-
+        <div id="page" class="page" style="height: 40px;"></div>
     </article>
     <!-- 左侧悬浮菜单 -->
     <section class="left_menu">
