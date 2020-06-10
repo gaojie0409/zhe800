@@ -1,9 +1,9 @@
 // 参1：父元素 参2 一行有多少个图片
 function lazyload(father, num) {
     load(father, num);
-    window.onscroll = () => {
+    window.addEventListener('scroll',() => {
         load(father, num);
-    }
+    },false)
 }
 function load(father, num) {
     // 元素顶部在浏览器底部时：元素top=滚轮top+浏览器高度

@@ -5,14 +5,7 @@
 body {
     background: white;
 }
-// 头部
-header {
-    font-size: 0;
-    iframe {
-        width: 100%;
-        height: 259.14px;
-    }
-}
+
 // 底部
 footer {
     font-size: 0;
@@ -77,6 +70,10 @@ article {
     .main-pic {
         border: 1px solid #ccc;
         position: relative;
+        img{
+            width: 400px;
+            height: 400px;
+        }
     }
     // 小放大镜
     .sf {
@@ -86,6 +83,7 @@ article {
         position: absolute;
         top: 0;
         left: 0;
+        visibility: hidden;
     }
     // 大放大镜
     .bf {
@@ -96,7 +94,11 @@ article {
         top: 0;
         left: 402px;
         overflow: hidden;
+        z-index: 30;
         visibility: hidden;
+        img{
+            position: absolute;
+        }
     }
 }
 // 主图下面小图
@@ -113,6 +115,9 @@ article {
             margin-right: 0;
         }
         &:hover {
+            border-color: red;
+        }
+        &.active{
             border-color: red;
         }
     }
@@ -473,14 +478,13 @@ article {
     // 颜色
     .color {
         margin: 15px 0;
-        i {
+        img {
             display: inline-block;
             width: 31px;
             height: 31px;
             border: 1px solid white;
-            background: url(https://z2.tuanimg.com/imagev2/trade/800x800.dc1c842e4c5df9c7c7743c07ead93268.400x.jpg)
-                no-repeat top left/100%;
             vertical-align: top;
+            margin-right: 5px;
             &.active {
                 border-color: red;
             }
@@ -508,24 +512,26 @@ article {
     // 数量
     .number {
         margin: 15px 0;
-        i,
-        strong {
+        i{
             display: inline-block;
             height: 28px;
             background: white;
-            vertical-align: middle;
+            vertical-align: bottom;
             border: 1px solid #ccc;
             line-height: 28px;
             text-align: center;
         }
         i {
-            margin-right: -2px;
+            margin-right: -1px;
             cursor: pointer;
             width: 28px;
         }
-        strong {
+        input {
             margin-right: -1px;
             width: 50px;
+            height: 26px;
+            border:1px solid #ccc;
+            text-align: center;
         }
         span {
             margin-left: 20px;

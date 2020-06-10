@@ -1,5 +1,6 @@
 import { ajax } from './ajax.js';
 import { lazyload } from './lazy_load.js';
+import { Header } from './header.js';
 // 渲染秒杀和今日新增模块数据
 ajax({
     url: "http://10.31.162.73/zhe800/php/goodsdata.php",
@@ -66,3 +67,19 @@ ajax({
         brand.innerHTML = strbrand;
     }
 });
+
+// 载入公共模块
+!function addCommonBlocks() {
+    ajax({
+        url: '../src/header.html',
+        success(data) {
+            const header = document.querySelector('header');
+            let strhtml = data.replace(/[\s\S]*<header>/, '').replace(/<\/header>[\s\S]*/, '')
+            header.innerHTML = strhtml;
+            // <style([\\s\\S]*)</style>
+            // console.log(strhtml)
+            new Header();
+
+        }
+    })
+}();

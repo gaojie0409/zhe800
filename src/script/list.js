@@ -1,5 +1,7 @@
 import { lazyload } from './lazy_load.js';
 import { $ajax } from './ajaxpromise.js';
+import { Header } from './header.js';
+import { ajax } from './ajax.js';
 // 列表渲染 分页  懒加载  （分页有bug）
 var box = new CustomPagination('#page', {
     total: 3, //总页数
@@ -17,13 +19,13 @@ var box = new CustomPagination('#page', {
             for (var i = 0; i < goodsdata.length; i++) {
                 strnew += `<div class="items">
                 <div class="imgbox">
-                    <a href="javascript:;">
+                    <a href="details.html?sid=${goodsdata[i].sid}">
                         <img src="" _src="${goodsdata[i].url}"
-                        alt="">
+                        alt="" sid="${goodsdata[i].sid}">
                     </a>
                     <a href="javascript:;"><p class="sub-title">找相似&gt;</p></a>
                 </div>
-                <a href="javascript:;"><p class="title">${goodsdata[i].title}</p></a>
+                <a href="details.html"><p class="title" >${goodsdata[i].title}</p></a>
                 <p class="price">￥<i>${goodsdata[i].price}</i><del>￥${(goodsdata[i].price * 3).toFixed(2)}</del><strong>剩余10天</strong></p>
                 <p class="collect clearfix"><strong><a href="javascript:;"><em><i></i>收藏</em></a><a href="javascript:;"><b>[详情]</b></a></strong></p>
             </div>`;
@@ -34,20 +36,20 @@ var box = new CustomPagination('#page', {
             // 今日更新模块懒加载
             lazyload(new_banner, 4);
             //排序
-            const priceBtn = document.querySelector('#pxprice');
             const priceup = document.querySelector('.up');
             const pricedown = document.querySelector('.down');
             const list_top_btns = document.querySelectorAll('.list-top-left span');
             let flag = 0;
 
             for (let i = 0; i < list_top_btns.length; i++) {
-                
+                //点击切换标签样式
                 list_top_btns[i].onclick = function () {
                     flag=(flag+1)%2;
                     for (let i = 0; i < list_top_btns.length; i++) {
                         list_top_btns[i].className = '';
                     }
                     list_top_btns[i].className = 'active';
+                    //如果点击的是价格进行排序
                     if(list_top_btns[i].id==="pxprice"){
                         if(flag===0){
                             priceup.style['border-bottom-color']='white';
@@ -63,7 +65,8 @@ var box = new CustomPagination('#page', {
                 }
                 
             }
-
+            //大小排序
+            //思路：节点遍历赋值给数组，数组各项找到价格比较后冒泡排序
             function paixuBig(){
                 let currentdata = document.querySelectorAll('.items')
                 let currentarr = [];
@@ -86,7 +89,7 @@ var box = new CustomPagination('#page', {
                     new_banner.appendChild(currentarr[i]);
                 }
             }
-
+            //小大排序
             function paixuSmall(){
                 let currentdata = document.querySelectorAll('.items')
                 let currentarr = [];
@@ -125,3 +128,23 @@ var box = new CustomPagination('#page', {
         });
     }
 });
+
+
+// 载入公共模块
+!function addCommonBlocks() {
+    ajax({
+        url: '../src/header.html',
+        success(data) {
+            const header = document.querySelector('header');
+            let strhtml = data.replace(/[\s\S]*<header>/, '').replace(/<\/header>[\s\S]*/, '')
+            header.innerHTML = strhtml;
+            // <style([\\s\\S]*)</style>
+
+            
+            new Header();
+
+        }
+    })
+}();
+
+
