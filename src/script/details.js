@@ -1,6 +1,7 @@
 import { ajax } from './ajax.js';
 import { cookie } from './cookie.js';
 import { Header } from './header.js';
+import { Right } from './right_toolbar.js';
 class Detail {
     constructor() {
         this.sid = location.search.substring(1).split('=')[1];
@@ -9,14 +10,14 @@ class Detail {
         this.changeNum();
         this.addToShopcar();
         this.addCommonBlocks();
-        
+
 
 
     }
     init() {
         let _this = this;
         // 载入公共模块
-        
+
         // 详情页初始化数据加载
         ajax({
             url: 'http://10.31.162.73/zhe800/php/details.php',
@@ -65,8 +66,9 @@ class Detail {
 
 
     }
-    载入公共模块
+    // 载入公共模块
     addCommonBlocks() {
+        // 头部
         ajax({
             url: '../src/header.html',
             success(data) {
@@ -77,6 +79,41 @@ class Detail {
 
                 console.log(strhtml)
 
+
+            }
+        })
+
+
+        // 右侧固定工具栏
+        ajax({
+            url: '../src/right_toolbar.html',
+            success(data) {
+                const right_toolbar = document.querySelector('.right-toolbar');
+                let strhtml = data.replace(/[\s\S]*<div class="right-toolbar">/, '');
+                strhtml = strhtml.substring(0, (strhtml.length - 24));
+                right_toolbar.innerHTML = strhtml;
+                new Right();
+            }
+        })
+        // 左侧悬浮菜单
+        // ajax({
+        //     url: '../src/left_menu.html',
+        //     success(data) {
+        //         const left_menu = document.querySelector('.left-menu');
+        //         let strhtml = data.replace(/[\s\S]*<div class="left-menu">/, '');
+        //         strhtml=strhtml.substring(0,(strhtml.length-24));
+        //         left_menu.innerHTML = strhtml;
+
+        //     }
+        // })
+
+        // 底部
+        ajax({
+            url: '../src/footer.html',
+            success(data) {
+                const left_menu = document.querySelector('footer');
+                let strhtml = data.replace(/[\s\S]*<footer>/, '').replace(/<\/footer>[\s\S]*/, '')
+                left_menu.innerHTML = strhtml;
 
             }
         })
@@ -94,7 +131,7 @@ class Detail {
             if (ev.target.className === 'plus') {
                 this.numinput.value = Number(this.numinput.value) + 1;
             } else if (ev.target.className === 'minus') {
-                this.numinput.value = Number(this.numinput.value) - 1 < 0 ? 0 : Number(this.numinput.value) - 1;
+                this.numinput.value = Number(this.numinput.value) - 1 < 1 ? 1 : Number(this.numinput.value) - 1;
             }
         }
     }
@@ -169,8 +206,8 @@ class Detail {
                 sf.style.left = l + 'px';
                 sf.style.top = t + 'px';
 
-                bp.style.left=-l*bili+'px';
-                bp.style.top=-t*bili+'px';
+                bp.style.left = -l * bili + 'px';
+                bp.style.top = -t * bili + 'px';
             }
         }
         sp.onmouseout = () => {

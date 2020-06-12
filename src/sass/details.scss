@@ -6,25 +6,7 @@ body {
     background: white;
 }
 
-// 底部
-footer {
-    font-size: 0;
-    iframe {
-        width: 100%;
-        height: 433.67px;
-    }
-}
-// 右侧固定工具栏
-.right_toolbar {
-    position: fixed;
-    right: 0;
-    top: 0;
-    height: 100%;
-    iframe {
-        width: 34px;
-        height: 100%;
-    }
-}
+
 // 主体
 article {
     width: 100%;

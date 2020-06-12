@@ -137,7 +137,7 @@ body {
     margin-top: 20px;
     
 }
-.ct_left .pwdlogin button {
+.ct_left .pwdlogin input {
     width: 180px;
     margin-left:60px ;
     height: 30px;

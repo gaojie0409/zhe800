@@ -1,8 +1,9 @@
 //左侧悬浮菜单
 .left-menu {
-    position: absolute;
-    top: 4px;
-    left:4px;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left:3%;
     width: 145px;
     background: white;
     // border: 1px solid red;

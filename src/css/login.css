@@ -161,7 +161,7 @@ body {
 }
 /* 显示隐藏用户名密码 输入框*/
 .usernamebox,.psaawordbox{
-    display: none;
+    /* display: none; */
 }
 /* 手机登录 */
 .ct_right .tel input {
@@ -193,7 +193,7 @@ body {
 }
 /* 显示隐藏手机号和验证码输入框 */
 .telbox,.telCode{
-    /* display: none; */
+    display: none;
 }
 .ct_right .telCode {
     width: 230px;

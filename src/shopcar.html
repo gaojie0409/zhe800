@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/shopcar.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/right_toolbar.css">
     <script src="./script/shopcar.js" type="module"></script>
 </head>
 
@@ -22,7 +24,7 @@
         <div class="goods-list">
             <!-- 列表头部 -->
             <div class="list-top">
-                <input type="checkbox" id="all-top">
+                <input type="checkbox" id="all-top" class="allCollect">
                 <label for="all-top">全选</label>
                 <span class="title">商品</span>
                 <span class="s-price">单价（元）</span>
@@ -33,7 +35,7 @@
             <!-- 列表项 -->
             <div class="itembox">
                 <div class="items" style="display:none;">
-                    <input type="checkbox">
+                    <input type="checkbox" class="itemCollect">
                     <a href="javascript:;"><img
                             src="https://z3.tuanimg.com/imagev2/trade/800x800.6bf61d515c800b302d6a412210addd07.100x100.jpg"
                             alt=""></a>
@@ -71,7 +73,7 @@
             <!-- 列表底部 -->
             <div class="list-bottom">
                 <p class="list-bottom-left">
-                    <input type="checkbox" id="all-bottom">
+                    <input type="checkbox" id="all-bottom" class="allCollect">
                     <label for="all-bottom">全选</label>
                     <span class="t-del">批量删除</span>
                 </p>
@@ -83,9 +85,13 @@
             </div>
         </div>
     </article>
+    <!-- 右侧固定工具栏 -->
+    <section class="right-toolbar">
+        
+    </section>
     <!-- 底部 -->
     <footer>
-        <iframe src="footer.html" frameborder="0" scrolling="no"></iframe>
+        
     </footer>
 </body>
 

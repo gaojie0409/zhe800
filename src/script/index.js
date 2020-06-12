@@ -1,6 +1,7 @@
 import { ajax } from './ajax.js';
 import { lazyload } from './lazy_load.js';
 import { Header } from './header.js';
+import { Right } from './right_toolbar.js';
 // 渲染秒杀和今日新增模块数据
 ajax({
     url: "http://10.31.162.73/zhe800/php/goodsdata.php",
@@ -46,7 +47,7 @@ ajax({
         miaoshagoods.innerHTML += strmiaosha;
         new_banner.innerHTML = strnew;
         // 今日更新模块懒加载
-        lazyload(new_banner,4);
+        lazyload(new_banner, 4);
     }
 });
 // 渲染品牌模块数据
@@ -70,6 +71,7 @@ ajax({
 
 // 载入公共模块
 !function addCommonBlocks() {
+    // 头部
     ajax({
         url: '../src/header.html',
         success(data) {
@@ -82,4 +84,86 @@ ajax({
 
         }
     })
+    // 右侧固定工具栏
+    ajax({
+        url: '../src/right_toolbar.html',
+        success(data) {
+            const right_toolbar = document.querySelector('.right-toolbar');
+            let strhtml = data.replace(/[\s\S]*<div class="right-toolbar">/, '');
+            strhtml = strhtml.substring(0, (strhtml.length - 24));
+            right_toolbar.innerHTML = strhtml;
+            console.log(document.querySelector('.subtopbtn'))
+            new Right();
+        }
+    })
+    // 左侧悬浮菜单
+    ajax({
+        url: '../src/left_menu.html',
+        success(data) {
+            const left_menu = document.querySelector('.left-menu');
+            let strhtml = data.replace(/[\s\S]*<div class="left-menu">/, '');
+            strhtml = strhtml.substring(0, (strhtml.length - 24));
+            left_menu.innerHTML = strhtml;
+
+        }
+    })
+
+    // 底部
+    ajax({
+        url: '../src/footer.html',
+        success(data) {
+            const left_menu = document.querySelector('footer');
+            let strhtml = data.replace(/[\s\S]*<footer>/, '').replace(/<\/footer>[\s\S]*/, '')
+            left_menu.innerHTML = strhtml;
+
+        }
+    })
+
+}();
+
+// 轮播
+!function lunbo() {
+    const btnli = document.querySelectorAll('.head-content-lunbo ol li');
+    const imgli = document.querySelectorAll('.head-content-lunbo ul li');
+    const lunbo = document.querySelector('.head-content-lunbo');
+    let index = 0;
+    let time = null;
+    // 点击圆点
+    for (let i = 0; i < btnli.length; i++) {
+        btnli[i].onclick = () => {
+            index = i;
+            tabswitch();
+        }
+    }
+    // 切换
+    function tabswitch() {
+        for (var j = 0; j < btnli.length; j++) {
+            btnli[j].className = '';
+            imgli[j].style.opacity = 0;
+        }
+        btnli[index].className = 'active';
+        imgli[index].style.opacity = 1;
+
+    }
+    // 自动轮播
+    time=setInterval(() => {
+        index++;
+        if(index>4){
+            index=0;
+        }
+        tabswitch();
+    },1000)
+    // 鼠标移入移出
+    lunbo.onmouseover=()=>{
+        clearInterval(time);
+    }
+    lunbo.onmouseout=()=>{
+        time=setInterval(() => {
+            index++;
+            if(index>4){
+                index=0;
+            }
+            tabswitch();
+        },1000)
+    }
 }();

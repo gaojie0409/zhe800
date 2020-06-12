@@ -2,6 +2,7 @@ import { lazyload } from './lazy_load.js';
 import { $ajax } from './ajaxpromise.js';
 import { Header } from './header.js';
 import { ajax } from './ajax.js';
+import { Right } from './right_toolbar.js';
 // 列表渲染 分页  懒加载  （分页有bug）
 var box = new CustomPagination('#page', {
     total: 3, //总页数
@@ -68,8 +69,9 @@ var box = new CustomPagination('#page', {
             //大小排序
             //思路：节点遍历赋值给数组，数组各项找到价格比较后冒泡排序
             function paixuBig(){
-                let currentdata = document.querySelectorAll('.items')
+                let currentdata = document.querySelectorAll('.new-banner .items')
                 let currentarr = [];
+                
                 for (var i = 0; i < currentdata.length; i++) {
                     currentarr[i] = currentdata[i]
                 }
@@ -91,7 +93,7 @@ var box = new CustomPagination('#page', {
             }
             //小大排序
             function paixuSmall(){
-                let currentdata = document.querySelectorAll('.items')
+                let currentdata = document.querySelectorAll('.new-banner .items')
                 let currentarr = [];
                 for (var i = 0; i < currentdata.length; i++) {
                     currentarr[i] = currentdata[i]
@@ -132,6 +134,7 @@ var box = new CustomPagination('#page', {
 
 // 载入公共模块
 !function addCommonBlocks() {
+    // 头部
     ajax({
         url: '../src/header.html',
         success(data) {
@@ -142,6 +145,41 @@ var box = new CustomPagination('#page', {
 
             
             new Header();
+
+        }
+    })
+
+
+    // 右侧固定工具栏
+    ajax({
+        url: '../src/right_toolbar.html',
+        success(data) {
+            const right_toolbar = document.querySelector('.right-toolbar');
+            let strhtml = data.replace(/[\s\S]*<div class="right-toolbar">/, '');
+            strhtml=strhtml.substring(0,(strhtml.length-24));
+            right_toolbar.innerHTML = strhtml;
+            new Right();
+        }
+    })
+    // 左侧悬浮菜单
+    ajax({
+        url: '../src/left_menu.html',
+        success(data) {
+            const left_menu = document.querySelector('.left-menu');
+            let strhtml = data.replace(/[\s\S]*<div class="left-menu">/, '');
+            strhtml=strhtml.substring(0,(strhtml.length-24));
+            left_menu.innerHTML = strhtml;
+
+        }
+    })
+
+    // 底部
+    ajax({
+        url: '../src/footer.html',
+        success(data) {
+            const left_menu = document.querySelector('footer');
+            let strhtml = data.replace(/[\s\S]*<footer>/, '').replace(/<\/footer>[\s\S]*/, '')
+            left_menu.innerHTML = strhtml;
 
         }
     })

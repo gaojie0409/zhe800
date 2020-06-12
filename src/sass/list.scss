@@ -12,36 +12,7 @@ body {
     background: #f5f5f5;
 }
 
-// 底部
-footer {
-    font-size: 0;
-    iframe {
-        width: 100%;
-        height: 433.67px;
-    }
-}
-// 左侧悬浮菜单
-.left_menu {
-    position: fixed;
-    left: 70px;
-    top: 50%;
-    transform: translate(0, -50%);
-    iframe {
-        width: 153px;
-        height: 580px;
-    }
-}
-// 右侧固定工具栏
-.right_toolbar {
-    position: fixed;
-    right:0;
-    top: 0;
-    height: 100%;
-    iframe {
-        width: 34px;
-        height: 100%;
-    }
-}
+
 // 主体部分
 // 分类
 .classify {
