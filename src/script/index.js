@@ -4,7 +4,7 @@ import { Header } from './header.js';
 import { Right } from './right_toolbar.js';
 // 渲染秒杀和今日新增模块数据
 ajax({
-    url: "http://10.31.162.73/zhe800/php/goodsdata.php",
+    url: "http://192.168.31.124/zhe800/php/goodsdata.php",
     success(data) {
         let goodsdata = JSON.parse(data);
         const miaoshagoods = document.querySelector('.miaoshagoods');
@@ -52,7 +52,7 @@ ajax({
 });
 // 渲染品牌模块数据
 ajax({
-    url: "http://10.31.162.73/zhe800/php/branddata.php",
+    url: "http://192.168.31.124/zhe800/php/branddata.php",
     success(data) {
         let branddata = JSON.parse(data);
         const brand = document.querySelector('.brand-recommend');

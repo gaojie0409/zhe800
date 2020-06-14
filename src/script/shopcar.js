@@ -5,10 +5,10 @@ import { Right } from './right_toolbar.js';
 
 class Shopcar {
     constructor() {
+
         this.init();
 
         this.addCommonBlocks();
-        this.single_del();
 
     }
     init() {
@@ -20,7 +20,7 @@ class Shopcar {
             arrnum = cookie.get('arrnum').split(',');
         }
         ajax({
-            url: 'http://10.31.162.73/zhe800/php/goodsdata.php',
+            url: 'http://192.168.31.124/zhe800/php/goodsdata.php',
             success(data) {
                 // 克隆隐藏的商品，赋值数据
                 let arrdata = JSON.parse(data);
@@ -43,7 +43,7 @@ class Shopcar {
                 }
                 //顶部动态悬浮导航
                 new Header();
-
+                num();
                 // 计算总价总数
                 function sum() {
                     const t_price = document.querySelector('.list-bottom .t-price i');
@@ -61,6 +61,19 @@ class Shopcar {
                     }
                     t_price.innerHTML = pricesum.toFixed(2);
                     t_num.innerHTML = goodssum;
+                }
+                // 计算购物车商品总数
+                function num() {
+                    const itemlist = document.querySelectorAll('.itembox .items');
+                    const topgoddsnum = document.querySelector('.top-toolbar-shopcar b');
+                    const rightgoddsnum = document.querySelector('.right-toolbar-top i');
+
+                    let goodssum = 0;
+                    for (var i = 1; i < itemlist.length; i++) {
+                        goodssum += Number(itemlist[i].querySelector('.number input').value)
+                    }
+                    topgoddsnum.innerHTML = goodssum;
+                    rightgoddsnum.innerHTML = goodssum;
                 }
                 // 购物车商品选择
                 !function () {
@@ -142,6 +155,7 @@ class Shopcar {
 
                             // 重新计算总价
                             sum();
+                            num();
 
                         }
                     }, false)
@@ -179,9 +193,33 @@ class Shopcar {
                         // 总价总数归零
                         t_num.innerHTML = 0;
                         t_price.innerHTML = 0.00;
+                        num()
 
                     }
 
+                }();
+
+
+                //单个删除
+                !function() {
+                    const itembox = document.querySelector('.itembox');
+                    itembox.onclick = (ev) => {
+                        var ev = ev || window.event;
+                        let currentsid = ev.target.parentNode.parentNode.sid;
+                        if (ev.target.className === 'del') {
+                            console.log(currentsid)
+                            if (confirm('确定要删除吗？？？'))
+                                console.log(ev.target)
+                            let arrsid = cookie.get('arrsid').split(',');
+                            let arrnum = cookie.get('arrnum').split(',');
+                            arrnum.splice(arrsid.indexOf(currentsid), 1)
+                            arrsid.splice(arrsid.indexOf(currentsid), 1)
+                            cookie.add('arrsid', arrsid, 10, '/');
+                            cookie.add('arrnum', arrnum, 10, '/');
+                            ev.target.parentNode.parentNode.parentNode.removeChild(ev.target.parentNode.parentNode);
+                        }
+                        num();
+                    }
                 }();
             }
         })
@@ -237,21 +275,6 @@ class Shopcar {
         })
     }
 
-    //单个删除
-    single_del() {
-        const itembox = document.querySelector('.itembox');
-        itembox.addEventListener('click', (ev) => {
-            var ev = ev || window.event;
-            let arrsid = cookie.get('arrsid').split(',');
-            let arrnum = cookie.get('arrnum').split(',');
-            let currentsid=ev.target.parentNode.parentNode.sid;
-            if (ev.target.className === 'del') {
-                if (confirm('确定要删除吗？？？'))
-                    console.log(ev.target)
-                ev.target.parentNode.parentNode.parentNode.removeChild(ev.target.parentNode.parentNode);
-            }
-        }, false)
-    }
 
 }
 new Shopcar();

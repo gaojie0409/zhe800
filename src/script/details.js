@@ -20,7 +20,7 @@ class Detail {
 
         // 详情页初始化数据加载
         ajax({
-            url: 'http://10.31.162.73/zhe800/php/details.php',
+            url: 'http://192.168.31.124/zhe800/php/details.php',
             data: {
                 sid: _this.sid
             },
