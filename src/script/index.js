@@ -4,7 +4,7 @@ import { Header } from './header.js';
 import { Right } from './right_toolbar.js';
 // 渲染秒杀和今日新增模块数据
 ajax({
-    url: "http://192.168.31.124/zhe800/php/goodsdata.php",
+    url: "http://10.31.162.73/zhe800/php/goodsdata.php",
     success(data) {
         let goodsdata = JSON.parse(data);
         const miaoshagoods = document.querySelector('.miaoshagoods');
@@ -52,7 +52,7 @@ ajax({
 });
 // 渲染品牌模块数据
 ajax({
-    url: "http://192.168.31.124/zhe800/php/branddata.php",
+    url: "http://10.31.162.73/zhe800/php/branddata.php",
     success(data) {
         let branddata = JSON.parse(data);
         const brand = document.querySelector('.brand-recommend');
@@ -70,7 +70,7 @@ ajax({
 });
 
 // 载入公共模块
-!function addCommonBlocks() {
+!function () {
     // 头部
     ajax({
         url: '../src/header.html',
@@ -81,7 +81,6 @@ ajax({
             // <style([\\s\\S]*)</style>
             // console.log(strhtml)
             new Header();
-
         }
     })
     // 右侧固定工具栏
@@ -122,7 +121,7 @@ ajax({
 }();
 
 // 轮播
-!function lunbo() {
+!function () {
     const btnli = document.querySelectorAll('.head-content-lunbo ol li');
     const imgli = document.querySelectorAll('.head-content-lunbo ul li');
     const lunbo = document.querySelector('.head-content-lunbo');
@@ -146,24 +145,24 @@ ajax({
 
     }
     // 自动轮播
-    time=setInterval(() => {
+    time = setInterval(() => {
         index++;
-        if(index>4){
-            index=0;
+        if (index > 4) {
+            index = 0;
         }
         tabswitch();
-    },1000)
+    }, 1000)
     // 鼠标移入移出
-    lunbo.onmouseover=()=>{
+    lunbo.onmouseover = () => {
         clearInterval(time);
     }
-    lunbo.onmouseout=()=>{
-        time=setInterval(() => {
+    lunbo.onmouseout = () => {
+        time = setInterval(() => {
             index++;
-            if(index>4){
-                index=0;
+            if (index > 4) {
+                index = 0;
             }
             tabswitch();
-        },1000)
+        }, 1000)
     }
 }();

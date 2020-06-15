@@ -20,7 +20,7 @@ class Shopcar {
             arrnum = cookie.get('arrnum').split(',');
         }
         ajax({
-            url: 'http://192.168.31.124/zhe800/php/goodsdata.php',
+            url: 'http://10.31.162.73/zhe800/php/goodsdata.php',
             success(data) {
                 // 克隆隐藏的商品，赋值数据
                 let arrdata = JSON.parse(data);
@@ -160,7 +160,7 @@ class Shopcar {
                         }
                     }, false)
                 }();
-                //删除商品
+                //批量删除商品
                 !function () {
                     const delAll = document.querySelector('.t-del');
                     const t_price = document.querySelector('.list-bottom .t-price i');

@@ -24,7 +24,7 @@ class Login{
         this.form.onsubmit=()=>{
             if(this.username.value!=='' && this.password.value!==""){
                 ajax({
-                    url:'http://192.168.31.124/zhe800/php/login.php',
+                    url:'http://10.31.162.73/zhe800/php/login.php',
                     type:'post',
                     data:{
                         name:_this.username.value,
@@ -34,7 +34,7 @@ class Login{
                         if(data){
                             // 账号密码正确存储用户名到本地存储，跳转首页
                             localStorage.setItem('name',_this.username.value)
-                            window.location.href='http://192.168.31.124/zhe800/dist/index.html';
+                            window.location.href='http://10.31.162.73/zhe800/dist/index.html';
 
                         }else{
                             _this.pwd_e.innerHTML="用户名密码不存在";

@@ -5,7 +5,7 @@ if(isset($_POST['submit'])){
     $password=$_POST['password'];
     $tel=$_POST['tel'];
     $conn->query("insert reg values(null,'$username','$username','$password','$password',NOW())");
-    header('location:http://192.168.31.124/zhe800/dist/login.html');
+    header('location:http://10.31.162.73/zhe800/dist/login.html');
 }
 if(isset($_GET['name'])){//判断用户名是否有值传入
     $name=$_GET['name'];

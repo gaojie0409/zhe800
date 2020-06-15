@@ -9,7 +9,7 @@ var box = new CustomPagination('#page', {
     changePage: function (pageNum) { //切换页码成功回调
         console.log('当前页码：' + pageNum); //当前页码
         $ajax({
-            url: 'http://192.168.31.124/zhe800/php/listdata.php',
+            url: 'http://10.31.162.73/zhe800/php/listdata.php',
             data: {
                 page: pageNum
             }
